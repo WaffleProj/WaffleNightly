@@ -1,6 +1,6 @@
 @echo off
 pushd	%~dp0
-call kill.cmd
+call Kill.cmd
 
 cd ..
 
