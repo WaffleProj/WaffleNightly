@@ -1,9 +1,18 @@
 @echo off
+pushd	%~dp0
 call kill.cmd
+
 cd ..
+
+cd Waffle
 call Build_Waffle.cmd
 call Build_Waffle.cmd AMD64
-::call Build_Mojibake.cmd
-::call Build_Mojibake.cmd AMD64
-cd Release
-@pause
+cd ..
+
+cd Mojibake
+call Build_Mojibake.cmd
+call Build_Mojibake.cmd AMD64
+cd ..
+
+popd
+pause

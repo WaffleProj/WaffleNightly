@@ -1,1 +1,2 @@
-﻿waffle_i386.exe /target "E:\love\とらぶるだいあり～・ごーるど\とらぶる・だいあり～ごーるど.exe"
+﻿cd ..
+Waffle_I386 mojibake "E:\love\とらぶるだいあり～・ごーるど\とらぶる・だいあり～ごーるど.exe"

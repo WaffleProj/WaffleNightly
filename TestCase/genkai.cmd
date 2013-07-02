@@ -1,1 +1,2 @@
-waffle_i386.exe /target "E:\Doujin\限界_お兄ちゃん\genkai\genkai.exe"
+cd ..
+Waffle_I386 mojibake "E:\Doujin\限界_お兄ちゃん\genkai\genkai.exe"
