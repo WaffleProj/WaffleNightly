@@ -6,10 +6,16 @@
 #include "waffle_core.h"
 #include "waffle_common_lib.h"
 
-#if defined(_WIN64)
-#include "port\AMD64.h"
+#if	defined(_M_IX86)
+    #include "port\I386.h"
+#elif	defined(_M_AMD64)
+    #include "port\AMD64.h"
+#elif	defined(_M_IA64)
+    #error  IA64 is unsupported right now.
+#elif	defined(_M_ARM)
+    #error  ARM is unsupported right now.
 #else
-#include "port\I386.h"
-#endif  // defined(_WIN64)
+    #error  Unknown platform.
+#endif
 
 #endif /* __SDK_WAFFLE_H_ */
