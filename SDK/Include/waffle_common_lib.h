@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-LIBRARY_API BOOL WINAPI WaffleCreateProcess(
+BOOL WINAPI WaffleCreateProcess(
   _In_  HINSTANCE hinstDLL,
   _In_  DWORD fdwReason,
   _In_  LPVOID lpvReserved

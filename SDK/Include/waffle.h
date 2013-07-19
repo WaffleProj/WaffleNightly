@@ -5,6 +5,7 @@
 
 #include "waffle_core.h"
 #include "waffle_common_lib.h"
+#include "waffle_component.h"
 
 #if	defined(_M_IX86)
     #include "port\I386.h"
