@@ -1,2 +1,1 @@
-cd ..
-Waffle_I386 mojibake "C:\Windows\SysWow64\notepad.exe"
+..\Waffle.vbs	mojibake "C:\Windows\SysWow64\notepad.exe"

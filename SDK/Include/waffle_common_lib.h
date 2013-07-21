@@ -1,6 +1,18 @@
 #ifndef __SDK_WAFFLE_COMMON_LIB_H_
 #define __SDK_WAFFLE_COMMON_LIB_H_
 
+#define szNameProcessSetting        TEXT("WaffleProcessSetting")
+#define szFmtValueProcessSetting    TEXT("WaffleProcessSetting/TID%08X/TickCount%08X")
+#define WAFFLE_PROCESS_SETTING_SIZE 512
+typedef struct
+{
+    SIZE_T  wVersionMajor;  // = WAFFLE_SDK_VERSION_MAJOR
+    SIZE_T  wVersionMinor;   // = WAFFLE_SDK_VERSION_MINOR
+    SIZE_T  cbSize;         // = sizeof(WAFFLE_PROCESS_SETTING)
+    SIZE_T  dwThreadId;
+    SIZE_T  offsetPluginName;
+} WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
+
 typedef BOOL (WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
   _Out_  PVOID *OldValue
 );

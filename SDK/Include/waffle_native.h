@@ -16,21 +16,21 @@ extern "C" {
 #endif
 
 #undef  RtlMoveMemory
-__declspec(dllimport) VOID WINAPI RtlMoveMemory(
+VOID WINAPI RtlMoveMemory(
   _In_  VOID UNALIGNED *Destination,
   _In_  const VOID UNALIGNED *Source,
   _In_  SIZE_T Length
 );
 
 #undef  RtlFillMemory
-__declspec(dllimport) VOID WINAPI RtlFillMemory(
+VOID WINAPI RtlFillMemory(
   _Out_  VOID UNALIGNED *Destination,
   _In_   SIZE_T Length,
   _In_   UCHAR Fill
 );
 
 #undef  RtlZeroMemory
-__declspec(dllimport) VOID WINAPI RtlZeroMemory(
+VOID WINAPI RtlZeroMemory(
   _In_  VOID UNALIGNED *Destination,
   _In_  SIZE_T Length
 );

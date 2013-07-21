@@ -1,2 +1,1 @@
-@cd	..
-@call	Build.cmd
+@call	..\Build.cmd

@@ -1,2 +1,1 @@
-cd ..
-Waffle_I386 mojibake "E:\Galgame\Lump of Sugar\タユタマ\tayutama.exe"
+..\Waffle.vbs	mojibake "E:\Galgame\Lump of Sugar\タユタマ\tayutama.exe"

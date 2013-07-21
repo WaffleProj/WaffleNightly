@@ -1,2 +1,1 @@
-cd ..
-Waffle_I386 mojibake "E:\Doujin\限界_お兄ちゃん\genkai\genkai.exe"
+..\Waffle.vbs	mojibake "E:\Doujin\限界_お兄ちゃん\genkai\genkai.exe"
