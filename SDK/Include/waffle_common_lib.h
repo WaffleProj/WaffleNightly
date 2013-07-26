@@ -9,8 +9,10 @@ typedef struct
     SIZE_T  wVersionMajor;  // = WAFFLE_SDK_VERSION_MAJOR
     SIZE_T  wVersionMinor;   // = WAFFLE_SDK_VERSION_MINOR
     SIZE_T  cbSize;         // = sizeof(WAFFLE_PROCESS_SETTING)
+    SIZE_T  dwProcessId;
     SIZE_T  dwThreadId;
-    SIZE_T  offsetPluginName;
+    SIZE_T  offsetszPluginName;
+    LPTSTR  lpszPluginName;
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
 typedef BOOL (WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
@@ -68,15 +70,46 @@ PROCESS_INFORMATION WINAPI WaffleInjectDll(
   _In_  LPCTSTR lpszTarget,
   _In_  LPTSTR lpszArgument,
   _In_  LPCTSTR lpszDirectory,
-  _In_  LPCTSTR lpszDllFull
+  _In_  LPCTSTR lpszDllFull,
+  _In_  LPWAFFLE_PROCESS_SETTING lpstProcessSetting
 );
 
 typedef PROCESS_INFORMATION (WINAPI *LPWAFFLEINJECTDLL)(
   _In_  LPCTSTR lpszTarget,
   _In_  LPTSTR lpszArgument,
   _In_  LPCTSTR lpszDirectory,
-  _In_  LPCTSTR lpszDllFull
+  _In_  LPCTSTR lpszDllFull,
+  _In_  LPWAFFLE_PROCESS_SETTING lpstProcessSetting
 );
+
+void WINAPI WaffleGetModuleDirectory(
+  _In_opt_  HMODULE hModule,
+  _Out_     LPTSTR lpFilename,
+  _In_      DWORD nSize
+);
+
+typedef void (WINAPI *LPWAFFLEGETMODULEDIRECTORY)(
+  _In_opt_  HMODULE hModule,
+  _Out_     LPTSTR lpFilename,
+  _In_      DWORD nSize
+);
+
+LPWAFFLE_PROCESS_SETTING WINAPI WaffleOpenProcessSetting();
+
+typedef LPWAFFLE_PROCESS_SETTING (WINAPI *LPWAFFLEOPENPROCESSSETTING)();
+
+void WINAPI WaffleResumeMainThread();
+
+typedef void (WINAPI *LPWAFFLERESUMEMAINTHREAD)();
+
+SIZE_T WINAPI WaffleInit(
+  _In_  LPVOID lpReserved
+);
+
+typedef SIZE_T (WINAPI *LPWAFFLEINIT)(
+  _In_  LPVOID lpReserved
+);
+  
 
 #ifdef __cplusplus
 };

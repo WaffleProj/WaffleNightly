@@ -6,7 +6,7 @@
 #define WAFFLE_PORT_WRITE_PRIVILEGED_INSTRUCTION(lpAddress) *(WAFFLE_PORT_PRIVILEGED_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_PRIVILEGED_INSTRUCTION
 
 #define	WAFFLE_PORT_PEB_ADDRESS                             (PPEB)__readgsqword(0x60)
-#define	WAFFLE_PORT_INSTRUCTION_POINTER(ExceptionInfo)      ExceptionInfo->ContextRecord->Rip
+#define	WAFFLE_PORT_PROGRAM_COUNTER(ExceptionInfo)          ExceptionInfo->ContextRecord->Rip
 
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_AMD64
 #define WAFFLE_PORT_MACHINE_STRING      TEXT("AMD64")

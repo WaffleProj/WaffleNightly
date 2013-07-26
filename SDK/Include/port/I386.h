@@ -6,7 +6,7 @@
 #define WAFFLE_PORT_WRITE_PRIVILEGED_INSTRUCTION(lpAddress) *(WAFFLE_PORT_PRIVILEGED_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_PRIVILEGED_INSTRUCTION
 
 #define	WAFFLE_PORT_PEB_ADDRESS                             (PPEB)__readfsdword(0x30)
-#define	WAFFLE_PORT_INSTRUCTION_POINTER(ExceptionInfo)      ExceptionInfo->ContextRecord->Eip
+#define	WAFFLE_PORT_PROGRAM_COUNTER(ExceptionInfo)          ExceptionInfo->ContextRecord->Eip
 
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_I386
 #define WAFFLE_PORT_MACHINE_STRING      TEXT("I386")
