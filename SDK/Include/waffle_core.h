@@ -1,8 +1,8 @@
 #ifndef __SDK_WAFFLE_CORE_H_
 #define __SDK_WAFFLE_CORE_H_
 
-#define LIBRARY_EXPORT    __declspec(dllexport)
-#define LIBRARY_IMPORT    __declspec(dllimport)
+#define LIBRARY_EXPORT      __declspec(dllexport)
+#define LIBRARY_IMPORT      __declspec(dllimport)
 
 #define WAFFLE_VERSION_MAJOR        0
 #define WAFFLE_VERSION_MINOR        10

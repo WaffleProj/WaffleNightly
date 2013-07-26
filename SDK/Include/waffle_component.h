@@ -5,12 +5,12 @@
 extern "C" {
 #endif
 
-SIZE_T WINAPI ComponentInit(
-  _In_  LPWAFFLE_PROCESS_SETTING lpstProcessSetting
-);
-typedef SIZE_T (WINAPI *LPCOMPONENTINIT)(
-  _In_  LPWAFFLE_PROCESS_SETTING lpstProcessSetting
-);
+    SIZE_T WINAPI ComponentInit(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting
+        );
+    typedef SIZE_T(WINAPI *LPCOMPONENTINIT)(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting
+        );
 
 #ifdef __cplusplus
 };

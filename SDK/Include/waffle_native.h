@@ -16,24 +16,24 @@ extern "C" {
 #endif
 
 #undef  RtlMoveMemory
-VOID WINAPI RtlMoveMemory(
-  _In_  VOID UNALIGNED *Destination,
-  _In_  const VOID UNALIGNED *Source,
-  _In_  SIZE_T Length
-);
+    VOID WINAPI RtlMoveMemory(
+        _In_    VOID UNALIGNED *Destination,
+        _In_    const VOID UNALIGNED *Source,
+        _In_    SIZE_T Length
+        );
 
 #undef  RtlFillMemory
-VOID WINAPI RtlFillMemory(
-  _Out_  VOID UNALIGNED *Destination,
-  _In_   SIZE_T Length,
-  _In_   UCHAR Fill
-);
+    VOID WINAPI RtlFillMemory(
+        _Out_   VOID UNALIGNED *Destination,
+        _In_    SIZE_T Length,
+        _In_    UCHAR Fill
+        );
 
 #undef  RtlZeroMemory
-VOID WINAPI RtlZeroMemory(
-  _In_  VOID UNALIGNED *Destination,
-  _In_  SIZE_T Length
-);
+    VOID WINAPI RtlZeroMemory(
+        _In_    VOID UNALIGNED *Destination,
+        _In_    SIZE_T Length
+        );
 
 #ifdef __cplusplus
 };
