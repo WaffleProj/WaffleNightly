@@ -9,8 +9,8 @@ typedef struct
     SIZE_T  wVersionMajor;  // = WAFFLE_SDK_VERSION_MAJOR
     SIZE_T  wVersionMinor;  // = WAFFLE_SDK_VERSION_MINOR
     SIZE_T  cbSize;         // = sizeof(WAFFLE_PROCESS_SETTING)
-    SIZE_T  dwProcessId;
-    SIZE_T  dwThreadId;
+    DWORD   dwProcessId;
+    DWORD   dwThreadId;
     TCHAR   szPlugin[MAX_PATH];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
