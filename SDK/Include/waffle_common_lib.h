@@ -11,8 +11,8 @@ typedef struct
     SIZE_T  cbSize;         // = sizeof(WAFFLE_PROCESS_SETTING)
     SIZE_T  dwProcessId;
     SIZE_T  dwThreadId;
-    SIZE_T  offsetszPluginName;
-    LPTSTR  lpszPluginName;
+    SIZE_T  offsetszPlugin;
+    LPTSTR  lpszPlugin;
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
 typedef BOOL(WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
