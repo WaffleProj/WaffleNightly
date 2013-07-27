@@ -5,6 +5,7 @@
 #define _In_opt_
 #define _Out_
 #define _Out_opt_
+#define _Inout_opt_
 #define _Reserved_
 
 #include <windows.h>
