@@ -5,9 +5,16 @@
 extern "C" {
 #endif
 
-    SIZE_T WINAPI ComponentInit(
+#ifdef WAFFLE_COMPONENT_BUILD
+#define WAFFLE_COMPONENT_FUNCTION LIBRARY_EXPORT
+#else
+#define WAFFLE_COMPONENT_FUNCTION
+#endif
+
+    WAFFLE_COMPONENT_FUNCTION SIZE_T WINAPI ComponentInit(
         _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting
         );
+
     typedef SIZE_T(WINAPI *LPCOMPONENTINIT)(
         _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting
         );

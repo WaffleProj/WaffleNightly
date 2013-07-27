@@ -1,5 +1,5 @@
-#ifndef __SDK_WAFFLE_COMMON_LIB_H_
-#define __SDK_WAFFLE_COMMON_LIB_H_
+#ifndef __SDK_WAFFLE_COMMON_DLL_H_
+#define __SDK_WAFFLE_COMMON_DLL_H_
 
 #define szNameProcessSetting        TEXT("WaffleProcessSetting")
 #define szFmtValueProcessSetting    TEXT("WaffleProcessSetting/TID%08X/TickCount%08X")
@@ -25,7 +25,13 @@ typedef BOOL(WINAPI *LPWOW64REVERTWOW64FSREDIRECTION)(
 extern "C" {
 #endif
 
-    BOOL WINAPI WaffleCreateProcess(
+#ifdef  _BUILD_WAFFLE_COMMON_DLL_
+#define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_EXPORT
+#else
+#define WAFFLE_COMMON_DLL_FUNCTION
+#endif
+
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleCreateProcess(
         _In_opt_    LPCTSTR lpApplicationName,
         _Inout_opt_ LPTSTR lpCommandLine,
         _In_opt_    LPSECURITY_ATTRIBUTES lpProcessAttributes,
@@ -51,7 +57,7 @@ extern "C" {
         _Out_opt_   LPPROCESS_INFORMATION lpProcessInformation
         );
 
-    void WINAPI WaffleInjectDll(
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleInjectDll(
         _In_    HANDLE hProcess,
         _In_    LPCTSTR lpszDllFull
         );
@@ -61,7 +67,7 @@ extern "C" {
         _In_    LPCTSTR lpszDllFull
         );
     
-    void WINAPI WaffleExecute(
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleExecute(
         _In_opt_    LPCTSTR lpApplicationName,
         _Inout_opt_ LPTSTR lpCommandLine,
         _In_opt_    LPCTSTR lpCurrentDirectory,
@@ -75,27 +81,31 @@ extern "C" {
         _Out_opt_   LPWAFFLE_PROCESS_SETTING lpstProcessSetting
         );
 
-    int WINAPI WaffleArgc(void);
-    SIZE_T WINAPI WaffleArgv(
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleArgc(void);
+
+    typedef int (WINAPI *LPWAFFLEARGC)(void);
+
+    WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleArgv(
         _In_    int intPosition,
         _In_    LPTSTR lpString,
         _In_    int intSize
         );
-    LPCTSTR WINAPI WaffleArgp(
-        _In_    int intPosition
-        );
 
-    typedef int (WINAPI *LPWAFFLEARGC)(void);
     typedef SIZE_T(WINAPI *LPWAFFLEARGV)(
         _In_    int intPosition,
         _In_    LPTSTR lpString,
         _In_    int intSize
         );
+
+    WAFFLE_COMMON_DLL_FUNCTION LPCTSTR WINAPI WaffleArgp(
+        _In_    int intPosition
+        );
+
     typedef LPCTSTR(WINAPI *LPWAFFLEARGP)(
         _In_    int intPosition
         );
 
-    WORD WINAPI WaffleGetMachineType(
+    WAFFLE_COMMON_DLL_FUNCTION WORD WINAPI WaffleGetMachineType(
         _In_    LPCTSTR lpszFile
         );
 
@@ -103,7 +113,7 @@ extern "C" {
         _In_    LPCTSTR lpszFile
         );
 
-    void WINAPI WaffleGetModuleDirectory(
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleGetModuleDirectory(
         _In_opt_    HMODULE hModule,
         _Out_       LPTSTR lpFilename,
         _In_        DWORD nSize
@@ -115,19 +125,19 @@ extern "C" {
         _In_        DWORD nSize
         );
 
-    LPWAFFLE_PROCESS_SETTING WINAPI WaffleOpenProcessSetting(void);
+    WAFFLE_COMMON_DLL_FUNCTION LPWAFFLE_PROCESS_SETTING WINAPI WaffleOpenProcessSetting(void);
 
     typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLEOPENPROCESSSETTING)(void);
 
-    LPWAFFLE_PROCESS_SETTING WINAPI WaffleCreateProcessSetting(void);
+    WAFFLE_COMMON_DLL_FUNCTION LPWAFFLE_PROCESS_SETTING WINAPI WaffleCreateProcessSetting(void);
 
     typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLECREATEPROCESSSETTING)(void);
 
-    void WINAPI WaffleResumeMainThread(void);
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleResumeMainThread(void);
 
     typedef void (WINAPI *LPWAFFLERESUMEMAINTHREAD)(void) ;
 
-    SIZE_T WINAPI WaffleInit(
+    WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleInit(
         _In_    LPVOID lpReserved
         );
 
@@ -135,7 +145,7 @@ extern "C" {
         _In_    LPVOID lpReserved
         );
 
-    void WINAPI WaffleGetFileHash(
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleGetFileHash(
         _In_    LPTSTR lpszFile,
         _In_    LPTSTR lpszResult
         );
@@ -149,4 +159,4 @@ extern "C" {
 };
 #endif
 
-#endif /* __SDK_WAFFLE_COMMON_LIB_H_ */
+#endif /* __SDK_WAFFLE_COMMON_DLL_H_ */

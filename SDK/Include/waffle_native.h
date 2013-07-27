@@ -1,16 +1,29 @@
 #ifndef __SDK_WAFFLE_NATIVE_H_
 #define __SDK_WAFFLE_NATIVE_H_
 
-#define _In_
-#define _In_opt_
-#define _Out_
-#define _Out_opt_
-#define _Inout_opt_
-#define _Reserved_
-
 #include <windows.h>
 #include <intrin.h>
 #include <winternl.h>
+
+#ifndef  _In_
+#define  _In_
+#endif
+#ifndef  _In_opt_
+#define  _In_opt_
+#endif
+#ifndef  _Out_
+#define  _Out_
+#endif
+#ifndef  _Out_opt_
+#define  _Out_opt_
+#endif
+#ifndef  _Inout_opt_
+#define  _Inout_opt_
+#endif
+#ifndef  _Reserved_
+#define  _Reserved_
+#endif
+
 
 #ifdef __cplusplus
 extern "C" {
