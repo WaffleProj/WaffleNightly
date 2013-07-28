@@ -1,5 +1,5 @@
-#ifndef __SDK_WAFFLE_NATIVE_H_
-#define __SDK_WAFFLE_NATIVE_H_
+#ifndef __SDK_WAFFLE_PSDK_PSDK_H_
+#define __SDK_WAFFLE_PSDK_PSDK_H_
 
 #include <windows.h>
 #include <intrin.h>
@@ -16,6 +16,9 @@
 #endif
 #ifndef  _Out_opt_
 #define  _Out_opt_
+#endif
+#ifndef  _Inout_
+#define  _Inout_
 #endif
 #ifndef  _Inout_opt_
 #define  _Inout_opt_
@@ -49,8 +52,14 @@ extern "C" {
         _In_    SIZE_T Length
         );
 
+#include "kernel32.h"
+#include "user32.h"
+#include "gdi32.h"
+#include "shell32.h"
+#include "psapi.h"
+
 #ifdef __cplusplus
 };
 #endif
 
-#endif /* __SDK_WAFFLE_NATIVE_H_ */
+#endif /* __SDK_WAFFLE_PSDK_PSDK_H_ */

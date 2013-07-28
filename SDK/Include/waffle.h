@@ -1,7 +1,7 @@
 #ifndef __SDK_WAFFLE_H_
 #define __SDK_WAFFLE_H_
 
-#include "waffle_native.h"
+#include "psdk\psdk.h"
 
 #include "waffle_core.h"
 #include "waffle_common_dll.h"
