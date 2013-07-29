@@ -101,4 +101,12 @@ typedef BOOL(WINAPI *LPVIRTUALPROTECT)(
     _Out_   PDWORD lpflOldProtect
     );
 
+typedef BOOL(WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
+    _Out_   PVOID *OldValue
+    );
+
+typedef BOOL(WINAPI *LPWOW64REVERTWOW64FSREDIRECTION)(
+    _In_    PVOID OldValue
+    );
+
 #endif /* __SDK_WAFFLE_PSDK_KERNEL32_H_ */

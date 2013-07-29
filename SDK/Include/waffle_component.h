@@ -18,6 +18,14 @@ extern "C" {
     typedef SIZE_T(WINAPI *LPCOMPONENTINIT)(
         _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting
         );
+    
+    WAFFLE_COMPONENT_FUNCTION SIZE_T WINAPI ThreadInit(
+        _In_    LPTHREAD_CONTEXT lpstThread
+        );
+    
+    typedef SIZE_T(WINAPI *LPTHREADINIT)(
+        _In_    LPTHREAD_CONTEXT lpstThread
+        );
 
 #ifdef __cplusplus
 };

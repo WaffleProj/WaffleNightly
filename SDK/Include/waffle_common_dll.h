@@ -14,12 +14,11 @@ typedef struct
     TCHAR   szPlugin[MAX_PATH];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
-typedef BOOL(WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
-    _Out_   PVOID *OldValue
-    );
-typedef BOOL(WINAPI *LPWOW64REVERTWOW64FSREDIRECTION)(
-    _In_    PVOID OldValue
-    );
+typedef struct
+{
+    HANDLE   hThread;
+    PCONTEXT lpstContext;
+} THREAD_CONTEXT, *LPTHREAD_CONTEXT;
 
 typedef struct
 {
@@ -97,6 +96,8 @@ extern "C" {
         _In_    HMODULE hDll,
         _In_    LPCSTR lpszFuncName
         );
+
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleSetBreakpoint(void);
 
     WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleBreakpointHandler(
         _In_    PEXCEPTION_POINTERS ExceptionInfo

@@ -28,7 +28,9 @@
 #elif   defined(_M_IA64)
 #error   IA64 is unsupported right now.
 #elif   defined(_M_ARM)
-#error   ARM is unsupported right now.
+#include "ARM.h"
+#elif   defined(_M_ARM64)
+#error   ARMv8 is unsupported right now.
 #else
 #error   Unknown platform.
 #endif
