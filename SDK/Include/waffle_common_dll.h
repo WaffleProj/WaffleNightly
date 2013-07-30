@@ -19,6 +19,7 @@ typedef struct
 
 typedef struct
 {
+    LPWAFFLE_PROCESS_SETTING lpstProcessSetting;
     HANDLE   hThread;
     PCONTEXT lpstContext;
 } THREAD_CONTEXT, *LPTHREAD_CONTEXT;
@@ -198,6 +199,36 @@ extern "C" {
         _Out_opt_   LPWAFFLE_PROCESS_SETTING lpstProcessSetting
         );
     /*
+    option.c
+    */
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleGetOptionString(
+        _In_        LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_        LPCTSTR lpszKeyName,
+        _Inout_     LPTSTR lpszValue,
+        _In_        DWORD nSize,
+        _In_opt_    LPTSTR lpszDefaultValue
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleSetOptionString(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_    LPCTSTR lpszKeyName,
+        _In_    LPCTSTR lpszValue,
+        _In_    BOOL bGlobal
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionInt(
+        _In_        LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_        LPCTSTR lpszKeyName,
+        _In_opt_    int nDefaultValue
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleSetOptionInt(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_    LPCTSTR lpszKeyName,
+        _In_    int nValue,
+        _In_    BOOL bGlobal
+        );
+    /*
     pemachine.c
     */
     WAFFLE_COMMON_DLL_FUNCTION WORD WINAPI WaffleGetMachineType(
@@ -213,9 +244,11 @@ extern "C" {
 #ifdef  UNICODE
 #define Wafflelstrcmpi WafflelstrcmpiW
 #define Wafflelstrcmp WafflelstrcmpW
+#define WaffleStrToInt WaffleStrToIntW
 #else
 #define Wafflelstrcmpi WafflelstrcmpiA
 #define Wafflelstrcmp WafflelstrcmpA
+#define WaffleStrToInt WaffleStrToIntA
 #endif
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
         _In_    LPCWSTR lpString1,
@@ -235,6 +268,16 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpA(
         _In_    LPCSTR lpString1,
         _In_    LPCSTR lpString2
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleStrToIntW(
+        _In_    LPCWSTR lpString,
+        _In_    int nDefault
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleStrToIntA(
+        _In_    LPCSTR lpString,
+        _In_    int nDefault
         );
     /*
     setting.c
