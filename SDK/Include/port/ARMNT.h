@@ -1,8 +1,10 @@
 #ifndef __SDK_WAFFLE_PORT_ARMNT_H_
 #define __SDK_WAFFLE_PORT_ARMNT_H_
 
-#define WAFFLE_PORT_EXCEPTION_INSTRUCTION                   0xE1200070 //bkpt 0000h
-#define WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA              DWORD
+
+#define WAFFLE_PORT_EXCEPTION_INSTRUCTION                   0xBE00      //bkpt 00h   Thumb-16
+                                                            //0xE1200070  bkpt 0000h ARM
+#define WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA              WORD
 #define WAFFLE_PORT_EXCEPTION_CODE                          EXCEPTION_BREAKPOINT
 #define WAFFLE_PORT_WRITE_EXCEPTION_INSTRUCTION(lpAddress)  *(WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_EXCEPTION_INSTRUCTION
 
