@@ -1,6 +1,8 @@
 #ifndef __SDK_WAFFLE_COMMON_DLL_H_
 #define __SDK_WAFFLE_COMMON_DLL_H_
 
+#define WAFFLE_HASH_LENGTH      20
+
 #define szNameProcessSetting        TEXT("WaffleProcessSetting")
 #define szFmtValueProcessSetting    TEXT("WaffleProcessSetting/TID%08X/TickCount%08X")
 #define WAFFLE_PROCESS_SETTING_SIZE sizeof(WAFFLE_PROCESS_SETTING)
@@ -12,6 +14,7 @@ typedef struct
     DWORD   dwProcessId;
     DWORD   dwThreadId;
     TCHAR   szPlugin[MAX_PATH];
+    TCHAR   szHash[WAFFLE_HASH_LENGTH + 1];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
 typedef struct
@@ -80,8 +83,9 @@ extern "C" {
         _In_    LPLIBRARY_TABLE_OBJECT lpstLibraryTable
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleGetModuleAddressW(
-        _In_    LPCWSTR lpszModule
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddress(
+        _In_    HMODULE hDll,
+        _In_    LPCSTR lpszFuncName
         );
 
     WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleCopyLibrary(
@@ -92,14 +96,9 @@ extern "C" {
         _In_    LPLIBRARY_TABLE_OBJECT stLibrary
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetFunctionAddressA(
-        _In_    HMODULE hDll,
-        _In_    LPCSTR lpszFuncName
-        );
-
     WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleSetBreakpoint(void);
 
-    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleBreakpointHandler(
+    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
         _In_    PEXCEPTION_POINTERS ExceptionInfo
         );
     /*
@@ -116,17 +115,25 @@ extern "C" {
         _Out_       LPTSTR lpFilename,
         _In_        DWORD nSize
         );
+
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleDisableWow64FsRedirection(
+        _Inout_ PVOID *OldValue
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleRevertWow64FsRedirection(
+        _In_    PVOID OldValue
+        );
     /*
     hash.c
     */
     WAFFLE_COMMON_DLL_FUNCTION void WINAPI WaffleGetFileHash(
-        _In_    LPTSTR lpszFile,
-        _In_    LPTSTR lpszResult
+        _In_    LPCTSTR lpszFile,
+        _Out_   LPTSTR lpszResult
         );
 
     typedef void (WINAPI *LPWAFFLEGETFILEHASH)(
-        _In_    LPTSTR lpszFile,
-        _In_    LPTSTR lpszResult
+        _In_    LPCTSTR lpszFile,
+        _Out_   LPTSTR lpszResult
         );
     /*
     init.c
@@ -199,6 +206,35 @@ extern "C" {
 
     typedef WORD(WINAPI *LPWAFFLEGETMACHINETYPE)(
         _In_    LPCTSTR lpszFile
+        );
+    /*
+    rtl.c
+    */
+#ifdef  UNICODE
+#define Wafflelstrcmpi WafflelstrcmpiW
+#define Wafflelstrcmp WafflelstrcmpW
+#else
+#define Wafflelstrcmpi WafflelstrcmpiA
+#define Wafflelstrcmp WafflelstrcmpA
+#endif
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
+        _In_    LPCWSTR lpString1,
+        _In_    LPCWSTR lpString2
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiA(
+        _In_    LPCSTR lpString1,
+        _In_    LPCSTR lpString2
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpW(
+        _In_    LPCWSTR lpString1,
+        _In_    LPCWSTR lpString2
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpA(
+        _In_    LPCSTR lpString1,
+        _In_    LPCSTR lpString2
         );
     /*
     setting.c
