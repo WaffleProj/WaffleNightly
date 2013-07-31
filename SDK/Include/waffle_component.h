@@ -20,11 +20,11 @@ extern "C" {
         );
     
     WAFFLE_COMPONENT_FUNCTION SIZE_T WINAPI ThreadInit(
-        _In_    LPTHREAD_CONTEXT lpstThread
+        _In_    LPWAFFLE_THREAD_CONTEXT lpstThread
         );
     
     typedef SIZE_T(WINAPI *LPTHREADINIT)(
-        _In_    LPTHREAD_CONTEXT lpstThread
+        _In_    LPWAFFLE_THREAD_CONTEXT lpstThread
         );
 
 #ifdef __cplusplus

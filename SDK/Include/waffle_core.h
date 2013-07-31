@@ -9,4 +9,60 @@
 #define WAFFLE_SDK_VERSION_MAJOR    1
 #define WAFFLE_SDK_VERSION_MINOR    0
 
+#define WAFFLE_HASH_LENGTH          20
+
+#define szNameProcessSetting        TEXT("WaffleProcessSetting")
+#define szFmtValueProcessSetting    TEXT("WaffleProcessSetting/TID%08X/TickCount%08X")
+#define WAFFLE_PROCESS_SETTING_SIZE sizeof(WAFFLE_PROCESS_SETTING)
+
+typedef struct
+{
+    DWORD   cbSize;         // = sizeof(WAFFLE_PROCESS_SETTING)
+    DWORD   dwVersionMajor; // = WAFFLE_SDK_VERSION_MAJOR
+    DWORD   dwVersionMinor; // = WAFFLE_SDK_VERSION_MINOR
+    DWORD   dwProcessId;
+    DWORD   dwThreadId;
+    TCHAR   szPlugin[MAX_PATH];
+    TCHAR   szHash[WAFFLE_HASH_LENGTH + 1];
+} WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
+
+typedef struct
+{
+    CRITICAL_SECTION    csRead;
+    CRITICAL_SECTION    csWrite;
+    HANDLE              hReader;
+    DWORD               dwReader;
+} WAFFLE_RWLOCK, *LPWAFFLE_RWLOCK;
+
+typedef struct
+{
+    LPWAFFLE_PROCESS_SETTING lpstProcessSetting;
+    HANDLE   hThread;
+    PCONTEXT lpstContext;
+} WAFFLE_THREAD_CONTEXT, *LPWAFFLE_THREAD_CONTEXT;
+
+typedef struct
+{
+    LPCSTR lpszFunction;
+    LPVOID lpDetourFunction;
+    LPVOID lpNewFunction;
+    LPVOID lpOriginalFunction;
+} WAFFLE_FUNCTION_ARRAY, *LPWAFFLE_FUNCTION_ARRAY;
+
+typedef struct
+{
+    LPCTSTR                 lpszLibrary;
+    LPWAFFLE_FUNCTION_ARRAY lpHookTable;
+    HMODULE                 lpLibrary;
+    HMODULE                 hModule;
+    LPVOID                  lpEndOfModule;
+
+    DWORD                   dwBehind;
+    LPVOID                  lpSource;
+    LPVOID                  lpSourceEnd;
+    LPVOID                  lpBackup;
+    LPVOID                  lpBackupEnd;
+    LPVOID                  lpstFunction;
+} WAFFLE_LIBRARY_ARRAY, *LPWAFFLE_LIBRARY_ARRAY;
+
 #endif /* __SDK_WAFFLE_CORE_H_ */
