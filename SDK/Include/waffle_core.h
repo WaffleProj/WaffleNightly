@@ -43,26 +43,22 @@ typedef struct
 
 typedef struct
 {
-    LPCSTR lpszFunction;
-    LPVOID lpDetourFunction;
-    LPVOID lpNewFunction;
-    LPVOID lpOriginalFunction;
+    DWORD   dwBehind;
+    LPCTSTR lpszFunction;
+    LPVOID  lpSource;
+    LPVOID  lpBackup;
+    LPVOID  lpDetour;
 } WAFFLE_FUNCTION_ARRAY, *LPWAFFLE_FUNCTION_ARRAY;
 
 typedef struct
 {
-    LPCTSTR                 lpszLibrary;
-    LPWAFFLE_FUNCTION_ARRAY lpHookTable;
-    HMODULE                 lpLibrary;
-    HMODULE                 hModule;
-    LPVOID                  lpEndOfModule;
-
     DWORD                   dwBehind;
-    LPVOID                  lpSource;
-    LPVOID                  lpSourceEnd;
-    LPVOID                  lpBackup;
-    LPVOID                  lpBackupEnd;
-    LPVOID                  lpstFunction;
+    LPCTSTR                 lpszLibrary;
+    HMODULE                 hSource;
+    LPVOID                  hSourceEnd;
+    HMODULE                 hBackup;
+    LPVOID                  hBackupEnd;
+    LPWAFFLE_FUNCTION_ARRAY lpstFunction;
 } WAFFLE_LIBRARY_ARRAY, *LPWAFFLE_LIBRARY_ARRAY;
 
 #endif /* __SDK_WAFFLE_CORE_H_ */

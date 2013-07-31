@@ -21,6 +21,24 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddLibrary(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
+    
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCreateFunctionArray(
+        _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleSetDetour(
+        _In_    DWORD dwLibrary,
+        _In_    DWORD dwFunction
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
+        _In_    PEXCEPTION_POINTERS ExceptionInfo
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddress(
+        _In_    LPCTSTR lpszLibrary,
+        _In_    LPCTSTR lpszFunction
+        );
     /*
     cmdarg.c
     */
@@ -58,20 +76,11 @@ extern "C" {
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstLibraryTable
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddress(
-        _In_    HMODULE hDll,
-        _In_    LPCSTR lpszFuncName
-        );
-
     WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleCopyLibraryEx(
         _In_    LPWAFFLE_LIBRARY_ARRAY stLibrary
         );
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetBreakpoint(VOID);
-
-    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
-        _In_    PEXCEPTION_POINTERS ExceptionInfo
-        );
     /*
     filesystem.c
     */
@@ -198,6 +207,23 @@ extern "C" {
         _In_    int nValue,
         _In_    BOOL bGlobal
         );
+    
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionStringNumber(
+        _In_    LPCTSTR lpszString
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionNames(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_    LPCTSTR lpszOption
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionKeys(
+        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_    LPCTSTR lpszOption,
+        _In_    LPCTSTR lpszSection
+        );
+    
+    
     /*
     pemachine.c
     */
@@ -215,10 +241,12 @@ extern "C" {
 #define Wafflelstrcmpi WafflelstrcmpiW
 #define Wafflelstrcmp WafflelstrcmpW
 #define WaffleStrToInt WaffleStrToIntW
+#define WaffleGetProcAddress WaffleGetProcAddressW
 #else
 #define Wafflelstrcmpi WafflelstrcmpiA
 #define Wafflelstrcmp WafflelstrcmpA
 #define WaffleStrToInt WaffleStrToIntA
+#define WaffleGetProcAddress WaffleGetProcAddressA
 #endif
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
         _In_    LPCWSTR lpString1,
@@ -273,7 +301,20 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WaffleLeaveReaderLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
+
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddressW(
+        _In_    HMODULE hDll,
+        _In_    LPCWSTR lpszFuncName
+        );
+
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddressA(
+        _In_    HMODULE hDll,
+        _In_    LPCSTR lpszFuncName
+        );
     
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleIntBox(
+        int i
+        );
     /*
     setting.c
     */
