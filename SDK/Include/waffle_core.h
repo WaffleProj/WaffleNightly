@@ -23,7 +23,7 @@ typedef struct
     DWORD   dwProcessId;
     DWORD   dwThreadId;
     TCHAR   szPlugin[MAX_PATH];
-    TCHAR   szHash[WAFFLE_HASH_LENGTH + 1];
+    TCHAR   szHash[WAFFLE_HASH_LENGTH * 2 + 1];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
 typedef struct

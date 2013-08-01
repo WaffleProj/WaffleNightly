@@ -315,6 +315,10 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleIntBox(
         int i
         );
+    
+    WAFFLE_COMMON_DLL_FUNCTION DWORD WINAPI WaffleGetImageSize(
+        HMODULE hModule
+        );
     /*
     setting.c
     */

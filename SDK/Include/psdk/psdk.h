@@ -55,6 +55,7 @@ extern "C" {
 #include "kernel32.h"
 #include "user32.h"
 #include "gdi32.h"
+#include "advapi32.h"
 #include "shell32.h"
 #include "psapi.h"
 
