@@ -108,5 +108,23 @@ typedef BOOL(WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
 typedef BOOL(WINAPI *LPWOW64REVERTWOW64FSREDIRECTION)(
     _In_    PVOID OldValue
     );
+    
+typedef int (WINAPI *LPCOMPARESTRINGA)(
+    _In_    LCID Locale,
+    _In_    DWORD dwCmpFlags,
+    _In_    LPCSTR lpString1,
+    _In_    int cchCount1,
+    _In_    LPCSTR lpString2,
+    _In_    int cchCount2
+    );
+
+typedef int (WINAPI *LPCOMPARESTRINGW)(
+    _In_    LCID Locale,
+    _In_    DWORD dwCmpFlags,
+    _In_    LPCWSTR lpString1,
+    _In_    int cchCount1,
+    _In_    LPCWSTR lpString2,
+    _In_    int cchCount2
+    );
 
 #endif /* __SDK_WAFFLE_PSDK_KERNEL32_H_ */
