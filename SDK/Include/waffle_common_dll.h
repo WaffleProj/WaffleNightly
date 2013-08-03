@@ -22,7 +22,14 @@ extern "C" {
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCreateFunctionArray(
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleAddFunction(
+        _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary,
+        _In_    LPCTSTR lpszFunction,
+        _In_    HMODULE hDetour,
+        _In_    LPCTSTR lpszDetour
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION DWORD WINAPI WaffleCreateFunctionArray(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
     
