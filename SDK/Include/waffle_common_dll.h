@@ -12,7 +12,7 @@ extern "C" {
 #endif
 
     /*
-    array.c
+    libraryarray.c
     */
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCopyLibrary(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
@@ -22,6 +22,10 @@ extern "C" {
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
     
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleCreateLibraryArray(VOID);
+    /*
+    functionarray.c
+    */
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleAddFunction(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary,
         _In_    LPCTSTR lpszFunction,
@@ -33,18 +37,19 @@ extern "C" {
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleSetDetour(
-        _In_    DWORD dwLibrary,
-        _In_    DWORD dwFunction
-        );
-    
-    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
-        _In_    PEXCEPTION_POINTERS ExceptionInfo
-        );
-    
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddress(
         _In_    LPCTSTR lpszLibrary,
         _In_    LPCTSTR lpszFunction
+        );
+    /*
+    componentarray.c
+    */
+    WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleLoadComponent(
+        _In_    LPCTSTR lpszComponent
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddComponent(
+        _In_    LPCTSTR lpszComponent
         );
     /*
     cmdarg.c
@@ -73,20 +78,16 @@ extern "C" {
         _In_    int intPosition
         );
     /*
-    environment.h
+    exception.c
     */
-    /*
-    exception.h
-    */
-    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetLibraryTable(
-        _In_    LPWAFFLE_LIBRARY_ARRAY lpstLibraryTable
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleSetDetour(
+        _In_    DWORD dwLibrary,
+        _In_    DWORD dwFunction
         );
-
-    WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleCopyLibraryEx(
-        _In_    LPWAFFLE_LIBRARY_ARRAY stLibrary
+    
+    WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
+        _In_    PEXCEPTION_POINTERS ExceptionInfo
         );
-
-    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetBreakpoint(VOID);
     /*
     filesystem.c
     */
@@ -130,10 +131,6 @@ extern "C" {
 
     typedef SIZE_T(WINAPI *LPWAFFLEINIT)(
         _In_    LPVOID lpReserved
-        );
-    
-    WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleLoadComponent(
-        _In_    LPCTSTR lpszComponent
         );
     /*
     inject.c

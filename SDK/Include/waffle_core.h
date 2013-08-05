@@ -26,18 +26,18 @@ typedef struct
     DWORD                   dwBehind;
     LPCTSTR                 lpszLibrary;
     HMODULE                 hSource;
-    LPVOID                  hSourceEnd;
+    SIZE_T                  hSourceEnd;
     HMODULE                 hBackup;
-    LPVOID                  hBackupEnd;
+    SIZE_T                  hBackupEnd;
     LPWAFFLE_FUNCTION_ARRAY lpstFunction;
 } WAFFLE_LIBRARY_ARRAY, *LPWAFFLE_LIBRARY_ARRAY;
 
 typedef struct
 {
-    DWORD                   dwBehind;
-    LPCTSTR                 lpszComponent;
-    HMODULE                 hSource;
-    LPVOID                  hSourceEnd;
+    DWORD   dwBehind;
+    LPCTSTR lpszComponent;
+    HMODULE hSource;
+    SIZE_T  hSourceEnd;
 } WAFFLE_COMPONENT_ARRAY, *LPWAFFLE_COMPONENT_ARRAY;
 
 #define WAFFLE_VERSION_MAJOR        0
@@ -58,7 +58,7 @@ typedef struct
     DWORD   dwVersionMinor; // = WAFFLE_SDK_VERSION_MINOR
     DWORD   dwProcessId;
     DWORD   dwThreadId;
-    LPWAFFLE_COMPONENT_ARRAY    lpstComponent
+    LPWAFFLE_COMPONENT_ARRAY    lpstComponent;
     LPWAFFLE_LIBRARY_ARRAY      lpstLibrary;
     TCHAR   szComponent[MAX_PATH];
     TCHAR   szComponentDirectory[MAX_PATH];
