@@ -21,7 +21,7 @@
 #define WAFFLE_PORT_MACHINE_STRING_ARM64    TEXT("ARM64")
 #define WAFFLE_PORT_MACHINE_STRING_THUMB    TEXT("THUMB")
 
-#if	    defined(_M_IX86)
+#if	defined(_M_IX86)
 #include "I386.h"
 #elif   defined(_M_AMD64)
 #include "AMD64.h"
@@ -29,6 +29,10 @@
 #error   IA64 is unsupported right now.
 #elif   defined(_M_ARM)
 #include "ARMNT.h"
+#elif   defined(_M_ARM_FP)
+
+#elif   defined(_M_ARMT)
+#error   ARM Thumb mode is unsupported right now.
 #elif   defined(_M_ARM64)
 #error   ARMv8 is unsupported right now.
 #else

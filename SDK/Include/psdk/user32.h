@@ -93,5 +93,10 @@ typedef LRESULT (WINAPI *LPDIALOGBOXPARAMA)(
     _In_opt_    DLGPROC lpDialogFunc,
     _In_        LPARAM dwInitParam
     );
+    
+typedef BOOL (WINAPI *LPEXITWINDOWSEX)(
+    _In_    UINT uFlags,
+    _In_    DWORD dwReason
+    );
 
 #endif /* __SDK_WAFFLE_PSDK_USER32_H_ */

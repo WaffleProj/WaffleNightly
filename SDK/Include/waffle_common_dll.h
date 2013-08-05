@@ -75,7 +75,6 @@ extern "C" {
     /*
     environment.h
     */
-    WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetComponentDirectory(VOID);
     /*
     exception.h
     */
@@ -131,6 +130,10 @@ extern "C" {
 
     typedef SIZE_T(WINAPI *LPWAFFLEINIT)(
         _In_    LPVOID lpReserved
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleLoadComponent(
+        _In_    LPCTSTR lpszComponent
         );
     /*
     inject.c
@@ -188,7 +191,6 @@ extern "C" {
     option.c
     */
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetOptionString(
-        _In_        LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_        LPCTSTR lpszKeyName,
         _Inout_     LPTSTR lpszValue,
         _In_        DWORD nSize,
@@ -196,20 +198,17 @@ extern "C" {
         );
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetOptionString(
-        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_    LPCTSTR lpszKeyName,
         _In_    LPCTSTR lpszValue,
         _In_    BOOL bGlobal
         );
 
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionInt(
-        _In_        LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_        LPCTSTR lpszKeyName,
         _In_opt_    int nDefaultValue
         );
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetOptionInt(
-        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_    LPCTSTR lpszKeyName,
         _In_    int nValue,
         _In_    BOOL bGlobal
@@ -220,17 +219,13 @@ extern "C" {
         );
     
     WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionNames(
-        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_    LPCTSTR lpszOption
         );
     
     WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionKeys(
-        _In_    LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_    LPCTSTR lpszOption,
         _In_    LPCTSTR lpszSection
-        );
-    
-    
+        );    
     /*
     pemachine.c
     */
@@ -323,9 +318,19 @@ extern "C" {
         int i
         );
     
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleHexBox(
+        DWORD i
+        );
+    
     WAFFLE_COMMON_DLL_FUNCTION DWORD WINAPI WaffleGetImageSize(
         HMODULE hModule
         );
+    
+    WAFFLE_COMMON_DLL_FUNCTION MSVC_NOINLINE LPVOID WINAPI WaffleGetCallersAddress(
+        _Out_   LPVOID *CallersAddress,
+        _Out_   LPVOID *CallersCaller
+        )
+        GCC_NOINLINE;
     /*
     setting.c
     */

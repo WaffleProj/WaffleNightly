@@ -127,4 +127,15 @@ typedef int (WINAPI *LPCOMPARESTRINGW)(
     _In_    int cchCount2
     );
 
+typedef BOOL (WINAPI *LPISDBCSLEADBYTEEX)(
+    _In_    UINT CodePage,
+    _In_    BYTE TestChar
+    );
+
+typedef void (WINAPI *LPRAISEEXCEPTION)(
+    _In_    DWORD dwExceptionCode,
+    _In_    DWORD dwExceptionFlags,
+    _In_    DWORD nNumberOfArguments,
+    _In_    const ULONG_PTR *lpArguments
+    );
 #endif /* __SDK_WAFFLE_PSDK_KERNEL32_H_ */
