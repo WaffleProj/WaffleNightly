@@ -16,9 +16,9 @@ typedef struct
 {
     DWORD   dwBehind;
     LPCTSTR lpszFunction;
-    LPVOID  lpSource;
-    LPVOID  lpBackup;
-    LPVOID  lpDetour;
+    LPBYTE  lpSource;
+    LPBYTE  lpBackup;
+    LPBYTE  lpDetour;
 } WAFFLE_FUNCTION_ARRAY, *LPWAFFLE_FUNCTION_ARRAY;
 
 typedef struct
@@ -58,11 +58,12 @@ typedef struct
     DWORD   dwVersionMinor; // = WAFFLE_SDK_VERSION_MINOR
     DWORD   dwProcessId;
     DWORD   dwThreadId;
+    HANDLE  hGlobalMutex;
     LPWAFFLE_COMPONENT_ARRAY    lpstComponent;
     LPWAFFLE_LIBRARY_ARRAY      lpstLibrary;
     TCHAR   szComponent[MAX_PATH];
     TCHAR   szComponentDirectory[MAX_PATH];
-    TCHAR   szHash[WAFFLE_HASH_LENGTH * 2 + 1];
+    TCHAR   szProcessHash[WAFFLE_HASH_LENGTH * sizeof(TCHAR) + sizeof(TCHAR)];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
 typedef struct

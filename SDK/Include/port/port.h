@@ -29,10 +29,6 @@
 #error   IA64 is unsupported right now.
 #elif   defined(_M_ARM)
 #include "ARMNT.h"
-#elif   defined(_M_ARM_FP)
-
-#elif   defined(_M_ARMT)
-#error   ARM Thumb mode is unsupported right now.
 #elif   defined(_M_ARM64)
 #error   ARMv8 is unsupported right now.
 #else

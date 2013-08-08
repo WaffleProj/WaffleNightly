@@ -41,6 +41,11 @@ extern "C" {
         _In_    LPCTSTR lpszLibrary,
         _In_    LPCTSTR lpszFunction
         );
+    
+    WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleFindDetourAddress(
+        _In_    PVOID ExceptionAddress,
+        _In_    PVOID CallerAddress
+        );
     /*
     componentarray.c
     */
@@ -83,6 +88,18 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleSetDetour(
         _In_    DWORD dwLibrary,
         _In_    DWORD dwFunction
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleInlineDetour(
+        _In_    LPBYTE  lpFunction
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleInlineHandler(
+        _In_    SIZE_T *lpReserved
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleExceptionDetour(
+        _In_    LPBYTE  lpFunction
         );
     
     WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
@@ -183,6 +200,12 @@ extern "C" {
         _In_opt_    LPCTSTR lpApplicationName,
         _Inout_opt_ LPTSTR lpCommandLine,
         _In_opt_    LPCTSTR lpCurrentDirectory
+        );
+    /*
+    logfile.c
+    */
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFile(
+        _In_    LPCTSTR lpszMessage
         );
     /*
     option.c
@@ -301,12 +324,12 @@ extern "C" {
         LPWAFFLE_RWLOCK lpstRWLock
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddressW(
+    WAFFLE_COMMON_DLL_FUNCTION LPBYTE WINAPI WaffleGetProcAddressW(
         _In_    HMODULE hDll,
         _In_    LPCWSTR lpszFuncName
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetProcAddressA(
+    WAFFLE_COMMON_DLL_FUNCTION LPBYTE WINAPI WaffleGetProcAddressA(
         _In_    HMODULE hDll,
         _In_    LPCSTR lpszFuncName
         );

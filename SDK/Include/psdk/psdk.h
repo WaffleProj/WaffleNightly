@@ -34,21 +34,28 @@ extern "C" {
 
 #undef  RtlMoveMemory
     VOID WINAPI RtlMoveMemory(
-        _In_    VOID UNALIGNED *Destination,
-        _In_    const VOID UNALIGNED *Source,
+        _In_    PVOID Destination,
+        _In_    const VOID *Source,
         _In_    SIZE_T Length
+        );
+
+#undef  RtlCopyMemory
+    VOID WINAPI RtlCopyMemory(
+          _In_    PVOID Destination,
+          _In_    const VOID *Source,
+          _In_    SIZE_T Length
         );
 
 #undef  RtlFillMemory
     VOID WINAPI RtlFillMemory(
-        _Out_   VOID UNALIGNED *Destination,
-        _In_    SIZE_T Length,
-        _In_    UCHAR Fill
+          _Out_   PVOID Destination,
+          _In_    SIZE_T Length,
+          _In_    BYTE Fill
         );
 
 #undef  RtlZeroMemory
     VOID WINAPI RtlZeroMemory(
-        _In_    VOID UNALIGNED *Destination,
+        _In_    PVOID Destination,
         _In_    SIZE_T Length
         );
 
