@@ -56,6 +56,9 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddComponent(
         _In_    LPCTSTR lpszComponent
         );
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleFindComponent(
+        _In_    LPVOID lpMemory
+        );
     /*
     cmdarg.c
     */
@@ -300,27 +303,27 @@ extern "C" {
         _In_    int nDefault
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleCreateRWLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCreateRWLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleReleaseRWLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleReleaseRWLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleEnterWriterLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleEnterWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleLeaveWriterLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLeaveWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleEnterReaderLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleEnterReaderLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION VOID WaffleLeaveReaderLock(
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLeaveReaderLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
 
@@ -346,11 +349,22 @@ extern "C" {
         HMODULE hModule
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION MSVC_NOINLINE LPVOID WINAPI WaffleGetCallersAddress(
-        _Out_   LPVOID *CallersAddress,
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetCallersAddress(
         _Out_   LPVOID *CallersCaller
-        )
-        GCC_NOINLINE;
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleAlloc(
+        _In_    SIZE_T dwBytes
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleReAlloc(
+        _In_    LPVOID lpMemory,
+        _In_    SIZE_T dwBytes
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleFree(
+        _In_    LPVOID lpMemory
+        );
     /*
     setting.c
     */

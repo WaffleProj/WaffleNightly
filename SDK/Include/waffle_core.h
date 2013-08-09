@@ -3,13 +3,12 @@
 
 #define LIBRARY_EXPORT      __declspec(dllexport)
 #define LIBRARY_IMPORT      __declspec(dllimport)
+#define INLINE              inline
 #if     defined(__GNUC__)
-#define GCC_NOINLINE        __attribute__(noinline)
-#define MSVC_NOINLINE
+#define NOINLINE            __attribute__((noinline))
 #endif
 #if     defined(_MSC_VER)
-#define GCC_NOINLINE
-#define MSVC_NOINLINE       __declspec(noinline)
+#define NOINLINE            __declspec(noinline)
 #endif
 
 typedef struct
@@ -38,6 +37,7 @@ typedef struct
     LPCTSTR lpszComponent;
     HMODULE hSource;
     SIZE_T  hSourceEnd;
+    HANDLE  hHeap;
 } WAFFLE_COMPONENT_ARRAY, *LPWAFFLE_COMPONENT_ARRAY;
 
 #define WAFFLE_VERSION_MAJOR        0
