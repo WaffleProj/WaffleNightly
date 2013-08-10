@@ -1,6 +1,20 @@
 #ifndef __SDK_WAFFLE_PSDK_GDI32_H_
 #define __SDK_WAFFLE_PSDK_GDI32_H_
 
+typedef int (WINAPI *LPENUMFONTSA)(
+  _In_    HDC hdc,
+  _In_    LPCSTR lpFaceName,
+  _In_    FONTENUMPROCA lpFontFunc,
+  _In_    LPARAM lParam
+);
+
+typedef int (WINAPI *LPENUMFONTSW)(
+  _In_    HDC hdc,
+  _In_    LPCWSTR lpFaceName,
+  _In_    FONTENUMPROCW lpFontFunc,
+  _In_    LPARAM lParam
+);
+
 typedef HFONT(WINAPI *LPCREATEFONTA)(
     _In_    int nHeight,
     _In_    int nWidth,
