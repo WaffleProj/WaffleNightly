@@ -3,12 +3,13 @@ Function GetCommandLine()
     'Should support Windows XP
     'http://msdn.microsoft.com/en-us/library/windows/desktop/aa394372.aspx
     'Command line used to start a specific process, if applicable. This property is new for Windows XP.
+
     Dim objServices, colItems, objItem
     Dim strExePath, strFullName, intPos
     
     strExePath = Replace(WScript.FullName, "\", "\\")
     strFullName = WScript.ScriptFullName
-    Set objServices = GetObject("winmgmts:\\.\root\cimv2")
+    Set objServices = GetObject("winmgmts:\\.\root\CIMV2")
     Set colItems = objServices.ExecQuery("SELECT CommandLine FROM Win32_Process WHERE ExecutablePath = '" & strExePath & "'")
     
     For Each objItem In colItems
@@ -19,6 +20,28 @@ Function GetCommandLine()
         End If
     Next
 End Function
+
+Function CheckSystemVersion()
+    'This function is based on the example script in http://msdn.microsoft.com/en-us/library/windows/desktop/aa394239.aspx
+
+    ' Connect to WMI and obtain instances of Win32_OperatingSystem
+    For Each objOS in GetObject("winmgmts:\\.\root\CIMV2").InstancesOf("Win32_OperatingSystem")
+        CheckSystemVersion = 0
+        For i = 1 to Len(objOS.Version)
+            If Mid(objOS.Version, i, 1) = "." Then
+                CheckSystemVersion = CheckSystemVersion * 10 + Mid(objOS.Version, i + 1, 1)
+                Exit For
+            End If
+            CheckSystemVersion = CheckSystemVersion * 10 + Mid(objOS.Version, i, 1)
+        Next
+        If CheckSystemVersion < 51 Then
+            MsgBox  "Waffle requires at least Windows XP, please update your system."
+            WScript.Quit
+        End If
+    Next
+End Function
+
+CheckSystemVersion
 
 Set WShell = CreateObject("WScript.Shell")
 
