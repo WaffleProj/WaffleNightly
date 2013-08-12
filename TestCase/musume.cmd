@@ -1,0 +1,1 @@
+..\Waffle.vbs	mojibake "E:\Galgame\[120727] [REAL] いたずらっ弟 ゛うちの弟にかぎって゛ + DLC Patch 1.01\musume3d101\musume3D.exe"
