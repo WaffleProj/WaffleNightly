@@ -11,9 +11,6 @@
 #define	WAFFLE_PORT_FRAME_POINTER                           Rbp
 #define	WAFFLE_PORT_FASTCALL_ARGUMENT                       Rcx
 
-#define	WAFFLE_PORT_ENTRY_POINT                             Rax
-#define WAFFLE_PORT_ENTRY_POINT_LOOP_STRING                 "\xEB\xFE"
-
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_AMD64
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_AMD64
 
