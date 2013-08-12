@@ -1,5 +1,5 @@
-#ifndef __SDK_WAFFLE_COMMON_DLL_H_
-#define __SDK_WAFFLE_COMMON_DLL_H_
+#ifndef __SDK_WAFFLE_COMMON_H_
+#define __SDK_WAFFLE_COMMON_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -262,17 +262,6 @@ extern "C" {
     /*
     rtl.c
     */
-#ifdef  UNICODE
-#define Wafflelstrcmpi WafflelstrcmpiW
-#define Wafflelstrcmp WafflelstrcmpW
-#define WaffleStrToInt WaffleStrToIntW
-#define WaffleGetProcAddress WaffleGetProcAddressW
-#else
-#define Wafflelstrcmpi WafflelstrcmpiA
-#define Wafflelstrcmp WafflelstrcmpA
-#define WaffleStrToInt WaffleStrToIntA
-#define WaffleGetProcAddress WaffleGetProcAddressA
-#endif
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
         _In_    LPCWSTR lpString1,
         _In_    LPCWSTR lpString2
@@ -384,4 +373,4 @@ extern "C" {
 };
 #endif
 
-#endif /* __SDK_WAFFLE_COMMON_DLL_H_ */
+#endif /* __SDK_WAFFLE_COMMON_H_ */
