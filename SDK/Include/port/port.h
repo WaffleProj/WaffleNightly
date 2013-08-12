@@ -35,4 +35,9 @@
 #error   Unknown platform.
 #endif
 
+#if	defined(WAFFLE_PORT_ENTRY_POINT)
+#define WAFFLE_PORT_ENTRY_POINT_LOOP                        ((LPBYTE) WAFFLE_PORT_ENTRY_POINT_LOOP_STRING)
+#define WAFFLE_PORT_ENTRY_POINT_LOOP_SIZE                   (sizeof(WAFFLE_PORT_ENTRY_POINT_LOOP_STRING) - 1)
+#endif
+
 #endif /* __SDK_WAFFLE_PORT_PORT_H_ */

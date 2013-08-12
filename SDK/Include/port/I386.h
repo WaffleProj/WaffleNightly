@@ -11,6 +11,9 @@
 #define	WAFFLE_PORT_FRAME_POINTER                           Ebp
 #define	WAFFLE_PORT_FASTCALL_ARGUMENT                       Ecx
 
+#define	WAFFLE_PORT_ENTRY_POINT                             Eax
+#define WAFFLE_PORT_ENTRY_POINT_LOOP_STRING                 "\xEB\xFE"
+
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_I386
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_I386
 

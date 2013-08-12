@@ -8,7 +8,7 @@ extern "C" {
 #ifdef  _BUILD_WAFFLE_COMMON_DLL_
 #define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_EXPORT
 #else
-#define WAFFLE_COMMON_DLL_FUNCTION
+#define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_IMPORT
 #endif
 
     /*
@@ -37,9 +37,14 @@ extern "C" {
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddress(
-        _In_    LPCTSTR lpszLibrary,
-        _In_    LPCTSTR lpszFunction
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddressA(
+        _In_    LPCWSTR lpszLibrary,
+        _In_    LPCSTR lpszFunction
+        );
+        
+    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddressW(
+        _In_    LPCWSTR lpszLibrary,
+        _In_    LPCWSTR lpszFunction
         );
     
     WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleFindDetourAddress(
