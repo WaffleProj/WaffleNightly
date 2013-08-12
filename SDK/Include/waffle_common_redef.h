@@ -47,8 +47,6 @@
 
 #else
 
-#define WaffleGetBackupAddress WaffleGetBackupAddressA
-
 #define Wafflelstrcmpi WafflelstrcmpiA
 #define Wafflelstrcmp WafflelstrcmpA
 #define WaffleStrToInt WaffleStrToIntA
