@@ -1,8 +1,6 @@
 Function GetCommandLine()
     'This function is bought you by Demon<http://demon.tw>. Thank you!
-    'Should support Windows XP
-    'http://msdn.microsoft.com/en-us/library/windows/desktop/aa394372.aspx
-    'Command line used to start a specific process, if applicable. This property is new for Windows XP.
+    'But I still need to modify some codes...
 
     Dim objServices, colItems, objItem
     Dim strExePath, strFullName, intPos
@@ -13,7 +11,7 @@ Function GetCommandLine()
     Set colItems = objServices.ExecQuery("SELECT CommandLine FROM Win32_Process WHERE ExecutablePath = '" & strExePath & "'")
     
     For Each objItem In colItems
-        intPos = InStr(1, objItem.CommandLine, strFullName, vbTextCompare)
+        intPos = InStr(objItem.CommandLine, strFullName)
         If intPos > 0 Then
             GetCommandLine = Mid(objItem.CommandLine, intPos - 1)
             Exit For

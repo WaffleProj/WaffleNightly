@@ -27,6 +27,7 @@
 
 #define WaffleWriteLogFile WaffleWriteLogFileW
 
+#define WaffleCheckOptionEncoding WaffleCheckOptionEncodingW
 #define WaffleGetOptionString WaffleGetOptionStringW
 #define WaffleSetOptionString WaffleSetOptionStringW
 #define WaffleGetOptionInt WaffleGetOptionIntW

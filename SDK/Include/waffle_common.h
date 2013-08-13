@@ -213,6 +213,10 @@ extern "C" {
     /*
     option.c
     */
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCheckOptionEncoding(
+        _In_    LPCTSTR lpFileName
+        );
+    
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetOptionString(
         _In_        LPCTSTR lpszKeyName,
         _Inout_     LPTSTR lpszValue,
