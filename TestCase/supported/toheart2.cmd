@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	mojibake "E:\Galgame\ToHeart2 XRATED\ToHeart2.exe"

@@ -8,33 +8,36 @@ extern "C" {
 #ifdef  _BUILD_WAFFLE_COMMON_DLL_
 #define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_EXPORT
 #else
+
+#if     defined(_MSC_VER)
 #define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_IMPORT
+#else
+#define WAFFLE_COMMON_DLL_FUNCTION
+#endif
+
 #endif
 
     /*
     libraryarray.c
     */
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleFindLibrary(
+        _In_    LPVOID lpMemory
+        );
+        
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCopyLibrary(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddLibrary(
-        _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
+        _In_    HMODULE hModule
         );
     
-    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleCreateLibraryArray(VOID);
     /*
     functionarray.c
     */
-    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleAddFunction(
-        _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary,
-        _In_    LPCTSTR lpszFunction,
-        _In_    HMODULE hDetour,
-        _In_    LPCTSTR lpszDetour
-        );
-    
-    WAFFLE_COMMON_DLL_FUNCTION DWORD WINAPI WaffleCreateFunctionArray(
-        _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddFunction(
+        _In_    LPWAFFLE_FUNCTION_ARRAY lpstNewFunction,
+        _In_    HMODULE hDetour
         );
         
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddress(
@@ -86,13 +89,23 @@ extern "C" {
         _In_    int intPosition
         );
     /*
-    exception.c
+    detour.c
     */
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleSetDetour(
         _In_    DWORD dwLibrary,
         _In_    DWORD dwFunction
         );
     
+    WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleAddDetour(
+        _In_    LPBYTE lpSource,
+        _In_    LPCTSTR lpszFunction,
+        _In_    HMODULE hDetour
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLoadDetourOption(VOID);
+    /*
+    exception.c
+    */
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleInlineDetour(
         _In_    LPBYTE  lpFunction
         );
@@ -207,8 +220,12 @@ extern "C" {
     /*
     logfile.c
     */
-    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFile(
-        _In_    LPCTSTR lpszMessage
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFileA(
+        _In_    LPCSTR lpszMessage
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFileW(
+        _In_    LPCWSTR lpszMessage
         );
     /*
     option.c
@@ -266,6 +283,24 @@ extern "C" {
     /*
     rtl.c
     */
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrlenW(
+        _In_    LPCWSTR lpString
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrlenA(
+        _In_    LPCSTR lpString
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPWSTR WINAPI WafflelstrcatW(
+        _In_    LPWSTR lpString1,
+        _In_    LPCWSTR lpString2
+        );
+    
+    WAFFLE_COMMON_DLL_FUNCTION LPSTR WINAPI WafflelstrcatA(
+        _In_    LPSTR lpString1,
+        _In_    LPCSTR lpString2
+        );
+    
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
         _In_    LPCWSTR lpString1,
         _In_    LPCWSTR lpString2

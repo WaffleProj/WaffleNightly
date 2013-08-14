@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	mojibake "E:\Galgame\MANGAKAR\MANGAKAR.exe"

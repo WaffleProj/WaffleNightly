@@ -1,1 +1,0 @@
-..\Waffle.vbs	mojibake "C:\Windows\System32\notepad_32.exe" "%~dp0932.txt"

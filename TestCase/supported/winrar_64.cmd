@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	mojibake "D:\Program Files\WinRAR\WinRAR.exe" "%~dp0932.zip"

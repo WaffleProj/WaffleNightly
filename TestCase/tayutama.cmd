@@ -1,1 +1,0 @@
-..\Waffle.vbs	mojibake "E:\Galgame\Lump of Sugar\タユタマ\tayutama.exe"

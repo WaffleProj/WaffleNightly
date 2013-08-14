@@ -38,6 +38,8 @@
 
 #define WaffleGetMachineType WaffleGetMachineTypeW
 
+#define Wafflelstrlen WafflelstrlenW
+#define Wafflelstrcat WafflelstrcatW
 #define Wafflelstrcmpi WafflelstrcmpiW
 #define Wafflelstrcmp WafflelstrcmpW
 #define WaffleStrToInt WaffleStrToIntW
@@ -48,6 +50,10 @@
 
 #else
 
+#define WaffleWriteLogFile WaffleWriteLogFileA
+
+#define Wafflelstrlen WafflelstrlenA
+#define Wafflelstrcat WafflelstrcatA
 #define Wafflelstrcmpi WafflelstrcmpiA
 #define Wafflelstrcmp WafflelstrcmpA
 #define WaffleStrToInt WaffleStrToIntA

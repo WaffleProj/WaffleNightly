@@ -23,7 +23,7 @@ typedef struct
 typedef struct
 {
     DWORD                   dwBehind;
-    LPCTSTR                 lpszLibrary;
+    LPTSTR                  lpszLibrary;
     HMODULE                 hSource;
     SIZE_T                  hSourceEnd;
     HMODULE                 hBackup;
