@@ -98,5 +98,12 @@ typedef BOOL (WINAPI *LPEXITWINDOWSEX)(
     _In_    UINT uFlags,
     _In_    DWORD dwReason
     );
-
+    
+typedef int (WINAPI *LPLOADSTRINGA)(
+    _In_opt_    HINSTANCE hInstance,
+    _In_        UINT uID,
+    _Out_       LPSTR lpBuffer,
+    _In_        int nBufferMax
+    );
+    
 #endif /* __SDK_WAFFLE_PSDK_USER32_H_ */

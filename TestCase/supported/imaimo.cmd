@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	mojibake "E:\Galgame\¤¤¤Þ¤¹¤°¤ªÐÖ¤Á¤ã¤ó¤ËÃÃ¤À¤Ã¤Æ¤¤¤¤¤¿¤¤£¡\¤¤¤Þ¤¹¤°¤ªÐÖ¤Á¤ã¤ó¤ËÃÃ¤À¤Ã¤Æ¤¤¤¤¤¿¤¤£¡.exe"

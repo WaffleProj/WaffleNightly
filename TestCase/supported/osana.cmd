@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	mojibake "E:\Galgame\ALcot\Ó×¤Ê¤¸¤ß¤Ï´ó½yîI\osana.exe"

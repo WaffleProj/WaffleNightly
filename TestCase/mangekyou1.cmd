@@ -1,1 +1,0 @@
-..\Waffle.vbs	mojibake "E:\Galgame\omegastar\美少女万華鏡－１－\美少女万華鏡－１－.exe"
