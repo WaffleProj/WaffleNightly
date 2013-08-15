@@ -16,6 +16,13 @@ typedef LRESULT(WINAPI *LPDEFWINDOWPROCA)(
     _In_    LPARAM lParam
     );
 
+typedef LRESULT(WINAPI *LPDEFDLGPROCA)(
+    _In_    HWND hDlg,
+    _In_    UINT Msg,
+    _In_    WPARAM wParam,
+    _In_    LPARAM lParam
+    );
+
 typedef HWND(WINAPI *LPCREATEWINDOWA)(
     _In_opt_    LPCSTR lpClassName,
     _In_opt_    LPCSTR lpWindowName,

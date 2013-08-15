@@ -1,1 +1,0 @@
-..\Waffle.vbs	mojibake "E:\Galgame\ハピメア\cmvs32.exe"

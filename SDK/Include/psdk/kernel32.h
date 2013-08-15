@@ -164,4 +164,20 @@ typedef void (WINAPI *LPRAISEEXCEPTION)(
     _In_    DWORD nNumberOfArguments,
     _In_    const ULONG_PTR *lpArguments
     );
+
+typedef UINT (WINAPI *LPGETPRIVATEPROFILEINTA)(
+        _In_    LPCSTR lpAppName,
+        _In_    LPCSTR lpKeyName,
+        _In_    INT nDefault,
+        _In_    LPCSTR lpFileName
+        );
+        
+typedef DWORD (WINAPI *LPGETPRIVATEPROFILESTRINGA)(
+        _In_    LPCSTR lpAppName,
+        _In_    LPCSTR lpKeyName,
+        _In_    LPCSTR lpDefault,
+        _Out_   LPSTR lpReturnedString,
+        _In_    DWORD nSize,
+        _In_    LPCSTR lpFileName
+        );
 #endif /* __SDK_WAFFLE_PSDK_KERNEL32_H_ */
