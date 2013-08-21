@@ -12,6 +12,7 @@ if	"%VisualStudioVersion%" == "" (
 echo	This script uses "dll2lib" made by Peter Nelson
 echo	See more informations at https://github.com/peterdn/dll2lib
 
+call	:dll2lib kernel32
 call	:dll2lib gdi32
 call	:dll2lib comdlg32
 

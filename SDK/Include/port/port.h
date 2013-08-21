@@ -21,12 +21,13 @@
 #define WAFFLE_PORT_MACHINE_STRING_ARM64    TEXT("ARM64")
 #define WAFFLE_PORT_MACHINE_STRING_THUMB    TEXT("THUMB")
 
+//http://msdn.microsoft.com/en-us/library/windows/desktop/ms680646(v=vs.85).aspx
 #if	defined(_M_IX86)
 #include "I386.h"
 #elif   defined(_M_AMD64)
 #include "AMD64.h"
 #elif   defined(_M_IA64)
-#error   IA64 is unsupported right now.
+#include "IA64.h"
 #elif   defined(_M_ARM)
 #include "ARMNT.h"
 #elif   defined(_M_ARM64)

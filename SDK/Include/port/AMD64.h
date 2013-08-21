@@ -17,4 +17,10 @@
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_AMD64
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_AMD64
 
+#if     defined(__GNUC__)
+#define	WAFFLE_PORT_RETURN_ADDRESS	__builtin_return_address(0)
+#elif     defined(_MSC_VER)
+#define	WAFFLE_PORT_RETURN_ADDRESS	_ReturnAddress()
+#endif
+
 #endif /* __SDK_WAFFLE_PORT_AMD64_H_ */

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20617.1 PREVIEW
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.common.1.0.dll", "..\Waffle\Waffle.common.1.0.dll\Waffle.common.1.0.dll.vcxproj", "{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}"
 EndProject
@@ -12,45 +12,59 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
+		Debug|Itanium = Debug|Itanium
 		Debug|Win32 = Debug|Win32
 		Debug|x64 = Debug|x64
 		Release|ARM = Release|ARM
+		Release|Itanium = Release|Itanium
 		Release|Win32 = Release|Win32
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|ARM.ActiveCfg = Debug|ARM
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|ARM.Build.0 = Debug|ARM
+		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|Itanium.Build.0 = Debug|Itanium
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|Win32.ActiveCfg = Debug|Win32
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|Win32.Build.0 = Debug|Win32
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|x64.ActiveCfg = Debug|x64
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Debug|x64.Build.0 = Debug|x64
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|ARM.ActiveCfg = Release|ARM
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|ARM.Build.0 = Release|ARM
+		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|Itanium.ActiveCfg = Release|Itanium
+		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|Itanium.Build.0 = Release|Itanium
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|Win32.ActiveCfg = Release|Win32
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|Win32.Build.0 = Release|Win32
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|x64.ActiveCfg = Release|x64
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}.Release|x64.Build.0 = Release|x64
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|ARM.ActiveCfg = Debug|ARM
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|ARM.Build.0 = Debug|ARM
+		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|Itanium.Build.0 = Debug|Itanium
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|Win32.ActiveCfg = Debug|Win32
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|Win32.Build.0 = Debug|Win32
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|x64.ActiveCfg = Debug|x64
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Debug|x64.Build.0 = Debug|x64
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|ARM.ActiveCfg = Release|ARM
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|ARM.Build.0 = Release|ARM
+		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|Itanium.ActiveCfg = Release|Itanium
+		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|Itanium.Build.0 = Release|Itanium
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|Win32.ActiveCfg = Release|Win32
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|Win32.Build.0 = Release|Win32
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|x64.ActiveCfg = Release|x64
 		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}.Release|x64.Build.0 = Release|x64
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|ARM.ActiveCfg = Debug|ARM
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|ARM.Build.0 = Debug|ARM
+		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|Itanium.Build.0 = Debug|Itanium
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|Win32.Build.0 = Debug|Win32
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|x64.ActiveCfg = Debug|x64
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Debug|x64.Build.0 = Debug|x64
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|ARM.ActiveCfg = Release|ARM
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|ARM.Build.0 = Release|ARM
+		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|Itanium.ActiveCfg = Release|Itanium
+		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|Itanium.Build.0 = Release|Itanium
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|Win32.ActiveCfg = Release|Win32
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|Win32.Build.0 = Release|Win32
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|x64.ActiveCfg = Release|x64

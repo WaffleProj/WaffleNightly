@@ -17,4 +17,10 @@
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_I386
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_I386
 
+#if     defined(__GNUC__)
+#define	WAFFLE_PORT_RETURN_ADDRESS	__builtin_return_address(0)
+#elif     defined(_MSC_VER)
+#define	WAFFLE_PORT_RETURN_ADDRESS	_ReturnAddress()
+#endif
+
 #endif /* __SDK_WAFFLE_PORT_I386_H_ */
