@@ -6,6 +6,7 @@
 	vol.1		32bits	LiveMaker	PASS
 	vol.2		32bits	LiveMaker	PASS
 	2.5		32bits	LiveMaker	PASS
+	2013		32bits	LiveMaker	PASS
 
 ハピメア
 			32bits	CMVS		PASS
@@ -34,6 +35,12 @@ notepad
 	6.1.7600.16385	32bits			PASS
 	6.1.7600.16385	64bits			PASS
 
+Radical*Tender
+			32bits	NScript		PASS
+
+義理☆ギリ しすたぁ～ず
+			32bits	NScript		PASS
+
 幼なじみは大統領 My girlfriend is the PRESIDENT.
 			32bits	吉里吉里2	PASS
 
@@ -45,6 +52,9 @@ notepad
 
 ToHeart2 XRATED
 			32bits			PASS
+
+彼女はツンデる風紀委員
+			32bits	LiveMaker	PASS
 
 WinRAR
 	5.00 beta 5	32bits			PASS

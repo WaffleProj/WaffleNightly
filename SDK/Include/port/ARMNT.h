@@ -20,6 +20,12 @@
 #define	WAFFLE_PORT_PROGRAM_POINTER                         Pc
 #define	WAFFLE_PORT_FASTCALL_ARGUMENT                       R0
 
+#if     defined(__GNUC__)
+#define	WAFFLE_PORT_RETURN_ADDRESS	__builtin_return_address(0)
+#elif     defined(_MSC_VER)
+#define	WAFFLE_PORT_RETURN_ADDRESS	_ReturnAddress()
+#endif
+
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_ARMNT
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_ARMNT
 
