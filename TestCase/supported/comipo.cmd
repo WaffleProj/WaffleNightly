@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	pomico "E:\ComiPo!\ComiPo.exe"

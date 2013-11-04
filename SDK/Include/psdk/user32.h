@@ -1,6 +1,31 @@
 #ifndef __SDK_WAFFLE_PSDK_USER32_H_
 #define __SDK_WAFFLE_PSDK_USER32_H_
 
+typedef INT_PTR (WINAPI *LPDIALOGBOXPARAMW)(
+    _In_opt_  HINSTANCE hInstance,
+    _In_      LPCWSTR lpTemplateName,
+    _In_opt_  HWND hWndParent,
+    _In_opt_  DLGPROC lpDialogFunc,
+    _In_      LPARAM dwInitParam
+    );
+
+typedef HMENU (WINAPI *LPLOADMENUW)(
+    _In_opt_  HINSTANCE hInstance,
+    _In_      LPCWSTR lpMenuName
+    );
+
+typedef int (WINAPI *LPLOADSTRINGW)(
+    _In_opt_  HINSTANCE hInstance,
+    _In_      UINT uID,
+    _Out_     LPWSTR lpBuffer,
+    _In_      int nBufferMax
+    );
+
+typedef HICON (WINAPI *LPLOADICONW)(
+    _In_opt_  HINSTANCE hInstance,
+    _In_      LPCWSTR lpIconName
+    );
+
 typedef LRESULT(WINAPI *LPCALLWINDOWPROCA)(
     _In_    WNDPROC lpPrevWndFunc,
     _In_    HWND hWnd,

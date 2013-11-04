@@ -72,6 +72,7 @@ extern "C" {
 #include "advapi32.h"
 #include "shell32.h"
 #include "psapi.h"
+#include "comctl32.h"
 
 #ifdef __cplusplus
 };

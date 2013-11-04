@@ -1,6 +1,30 @@
 #ifndef __SDK_WAFFLE_PSDK_KERNEL32_H_
 #define __SDK_WAFFLE_PSDK_KERNEL32_H_
 
+typedef HRSRC (WINAPI *LPFINDRESOURCEEXA)(
+    _In_opt_  HMODULE hModule,
+    _In_      LPCSTR lpType,
+    _In_      LPCSTR lpName,
+    _In_      WORD wLanguage
+    );
+
+typedef HRSRC (WINAPI *LPFINDRESOURCEEXW)(
+    _In_opt_  HMODULE hModule,
+    _In_      LPCWSTR lpType,
+    _In_      LPCWSTR lpName,
+    _In_      WORD wLanguage
+    );
+    
+typedef HGLOBAL (WINAPI *LPLOADRESOURCE)(
+    _In_opt_  HMODULE hModule,
+    _In_      HRSRC hResInfo
+    );
+    
+typedef DWORD (WINAPI* LPSIZEOFRESOURCE)(
+    _In_opt_  HMODULE hModule,
+    _In_      HRSRC hResInfo
+    );
+
 typedef BOOL (WINAPI *LPCREATEPROCESSA)(
     _In_opt_    LPCSTR lpApplicationName,
     _Inout_opt_ LPSTR lpCommandLine,
