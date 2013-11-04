@@ -1,13 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.common.1.0.dll", "..\Waffle\Waffle.common.1.0.dll\Waffle.common.1.0.dll.vcxproj", "{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.exe", "..\Waffle\Waffle.exe\Waffle.exe.vcxproj", "{BDFFB373-FB80-4470-8DDE-14E906A5CBC2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mojibake.core.1.0.dll", "..\Mojibake\Mojibake.core.1.0.dll\Mojibake.core.1.0.dll.vcxproj", "{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mojibake", "Mojibake", "{4F44CE89-F1FD-4962-ABC8-652E40E7F0E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Waffle", "Waffle", "{DB498AAF-B98F-4670-818A-54BA22A9D976}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomiCo", "PomiCo", "{ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PomiCo.res.2.35.dll", "..\PomiCo\PomiCo.res.2.35.dll\PomiCo.res.2.35.dll.vcxproj", "{30000C06-C81C-4575-98CA-E4D362F9E42E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,8 +77,30 @@ Global
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|Win32.Build.0 = Release|Win32
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|x64.ActiveCfg = Release|x64
 		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B}.Release|x64.Build.0 = Release|x64
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|ARM.Build.0 = Debug|ARM
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|Itanium.Build.0 = Debug|Itanium
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|Win32.Build.0 = Debug|Win32
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|x64.ActiveCfg = Debug|x64
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Debug|x64.Build.0 = Debug|x64
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|ARM.ActiveCfg = Release|ARM
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|ARM.Build.0 = Release|ARM
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|Itanium.ActiveCfg = Release|Itanium
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|Itanium.Build.0 = Release|Itanium
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|Win32.ActiveCfg = Release|Win32
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|Win32.Build.0 = Release|Win32
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|x64.ActiveCfg = Release|x64
+		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A12814BB-9FAF-40CD-ADEE-95D58D092B3B} = {4F44CE89-F1FD-4962-ABC8-652E40E7F0E6}
+		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE} = {DB498AAF-B98F-4670-818A-54BA22A9D976}
+		{BDFFB373-FB80-4470-8DDE-14E906A5CBC2} = {DB498AAF-B98F-4670-818A-54BA22A9D976}
+		{30000C06-C81C-4575-98CA-E4D362F9E42E} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 	EndGlobalSection
 EndGlobal
