@@ -54,6 +54,8 @@ Case    "AMD64"
     WAFFLE = PATH & "Component\Waffle\AMD64\Waffle.exe"
 Case    "ARM"
     WAFFLE = PATH & "Component\Waffle\ARMNT\Waffle.exe"
+Case    "IA64"
+    WAFFLE = PATH & "Component\Waffle\IA64\Waffle.exe"
 Case    Else
     MsgBox "Unsupported platform"
     WScript.Quit
