@@ -196,11 +196,13 @@ extern "C" {
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleInjectDll(
         _In_    HANDLE hProcess,
+        _In_    HANDLE hThread,
         _In_    LPCTSTR lpszDllFull
         );
 
     typedef VOID(WINAPI *LPWAFFLEINJECTDLL)(
         _In_    HANDLE hProcess,
+        _In_    HANDLE hThread,
         _In_    LPCTSTR lpszDllFull
         );
 

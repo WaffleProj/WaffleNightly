@@ -63,7 +63,6 @@ typedef struct
     LPWAFFLE_LIBRARY_ARRAY      lpstLibrary;
     TCHAR   szComponent[MAX_PATH];
     TCHAR   szComponentDirectory[MAX_PATH];
-    TCHAR   szMachine[16];
     TCHAR   szProcessHash[WAFFLE_HASH_LENGTH + 1];
 } WAFFLE_PROCESS_SETTING, *LPWAFFLE_PROCESS_SETTING;
 
