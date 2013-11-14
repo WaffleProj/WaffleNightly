@@ -19,7 +19,7 @@
 
 #if     defined(__GNUC__)
 #define	WAFFLE_PORT_RETURN_ADDRESS	__builtin_return_address(0)
-#elif     defined(_MSC_VER)
+#elif   defined(_MSC_VER)
 #define	WAFFLE_PORT_RETURN_ADDRESS	_ReturnAddress()
 #endif
 
