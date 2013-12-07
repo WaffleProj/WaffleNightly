@@ -1,16 +1,6 @@
 #ifndef __SDK_WAFFLE_CORE_H_
 #define __SDK_WAFFLE_CORE_H_
 
-#define LIBRARY_EXPORT      __declspec(dllexport)
-#define LIBRARY_IMPORT      __declspec(dllimport)
-#define INLINE              inline
-#if     defined(__GNUC__)
-#define NOINLINE            __attribute__((noinline))
-#endif
-#if     defined(_MSC_VER)
-#define NOINLINE            __declspec(noinline)
-#endif
-
 typedef struct
 {
     DWORD   dwBehind;

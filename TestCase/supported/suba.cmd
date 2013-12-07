@@ -1,1 +1,2 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\匼ю日仄五�捸坼BGI.exe"
+call	..\Var.cmd
+..\..\Waffle.vbs	mojibake "%GALGAME%\匼ю日仄五�捸坼BGI.exe"

@@ -1,1 +1,2 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\ALcot\衿卅元心反湮緙薆\osana.exe"
+call	..\Var.cmd
+..\..\Waffle.vbs	mojibake "%GALGAME%\ALcot\衿卅元心反湮緙薆\osana.exe"

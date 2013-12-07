@@ -19,8 +19,12 @@ call	:dll2lib comdlg32
 pause
 goto	eof
 :dll2lib
-copy	%WINDIR%\System32\%1.dll
+::Using Windows RT libraries
+::Download link: http://www.microsoft.com/en-us/download/details.aspx?id=40810
+::copy	%WINDIR%\System32\%1.dll
+echo	%1
 ..\..\Tool\dll2lib	%1.dll > NUL
-del	%1.dll
+::del	%1.dll
+del	%1.exp
 goto	eof
 :eof

@@ -1,1 +1,2 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\Lump of Sugar\タユタマ\tayutama.exe"
+call	..\Var.cmd
+..\..\Waffle.vbs	mojibake "%GALGAME%\Lump of Sugar\タユタマ\tayutama.exe"

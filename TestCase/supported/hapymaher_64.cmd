@@ -1,1 +1,2 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\ハピメア\cmvs64.exe"
+call	..\Var.cmd
+..\..\Waffle.vbs	mojibake "%GALGAME%\ハピメア\cmvs64.exe"

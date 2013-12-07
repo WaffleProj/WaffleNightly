@@ -1,1 +1,2 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\MANGAKAR\MANGAKAR.exe"
+call	..\Var.cmd
+..\..\Waffle.vbs	mojibake "%GALGAME%\MANGAKAR\MANGAKAR.exe"
