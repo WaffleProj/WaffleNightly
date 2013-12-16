@@ -37,6 +37,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PomiCo.res.2.31.dll", "..\P
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PomiCo.res.1.22.dll", "..\PomiCo\PomiCo.res.1.22.dll\PomiCo.res.1.22.dll.vcxproj", "{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nullstub", "nullstub", "{46CEC47B-28A2-487D-A186-F4D756C42FC2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nullstub.dll", "..\nullstub\nullstub.dll\nullstub.dll.vcxproj", "{C49122AB-629F-4C13-923B-71188177B072}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -270,6 +274,16 @@ Global
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|Win32.Build.0 = Release|Win32
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|x64.ActiveCfg = Release|x64
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|x64.Build.0 = Release|x64
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Itanium.ActiveCfg = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Win32.Build.0 = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|x64.ActiveCfg = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|ARM.ActiveCfg = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|Itanium.ActiveCfg = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|Win32.ActiveCfg = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|Win32.Build.0 = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -289,5 +303,6 @@ Global
 		{52976525-B2DC-47E8-AB9D-BEBAD562592C} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 		{EF7FDF0C-68E3-40D9-BA2F-25D976851F18} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
+		{C49122AB-629F-4C13-923B-71188177B072} = {46CEC47B-28A2-487D-A186-F4D756C42FC2}
 	EndGlobalSection
 EndGlobal

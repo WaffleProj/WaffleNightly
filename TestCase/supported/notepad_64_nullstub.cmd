@@ -1,0 +1,1 @@
+..\..\Waffle.vbs	nullstub "C:\Windows\System32\notepad.exe" "%~dp0932.txt"
