@@ -4,5 +4,6 @@ Option.ini
 # Visual Studio files
 *.pdb
 *.lastcodeanalysissucceeded
-*.bsc
 *.suo
+*.sdf
+*.opensdf

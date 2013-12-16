@@ -57,16 +57,16 @@ extern "C" {
 
 #undef  RtlCopyMemory
     VOID WINAPI RtlCopyMemory(
-          _In_    PVOID Destination,
-          _In_    const VOID *Source,
-          _In_    SIZE_T Length
+        _In_    PVOID Destination,
+        _In_    const VOID *Source,
+        _In_    SIZE_T Length
         );
 
 #undef  RtlFillMemory
     VOID WINAPI RtlFillMemory(
-          _Out_   PVOID Destination,
-          _In_    SIZE_T Length,
-          _In_    BYTE Fill
+        _Out_   PVOID Destination,
+        _In_    SIZE_T Length,
+        _In_    BYTE Fill
         );
 
 #undef  RtlZeroMemory

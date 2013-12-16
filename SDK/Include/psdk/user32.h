@@ -1,7 +1,7 @@
 #ifndef __SDK_WAFFLE_PSDK_USER32_H_
 #define __SDK_WAFFLE_PSDK_USER32_H_
 
-typedef INT_PTR (WINAPI *LPDIALOGBOXPARAMW)(
+typedef INT_PTR(WINAPI *LPDIALOGBOXPARAMW)(
     _In_opt_  HINSTANCE hInstance,
     _In_      LPCWSTR lpTemplateName,
     _In_opt_  HWND hWndParent,
@@ -9,7 +9,7 @@ typedef INT_PTR (WINAPI *LPDIALOGBOXPARAMW)(
     _In_      LPARAM dwInitParam
     );
 
-typedef HMENU (WINAPI *LPLOADMENUW)(
+typedef HMENU(WINAPI *LPLOADMENUW)(
     _In_opt_  HINSTANCE hInstance,
     _In_      LPCWSTR lpMenuName
     );
@@ -21,7 +21,7 @@ typedef int (WINAPI *LPLOADSTRINGW)(
     _In_      int nBufferMax
     );
 
-typedef HICON (WINAPI *LPLOADICONW)(
+typedef HICON(WINAPI *LPLOADICONW)(
     _In_opt_  HINSTANCE hInstance,
     _In_      LPCWSTR lpIconName
     );
@@ -104,38 +104,38 @@ typedef BOOL(WINAPI *LPSETWINDOWTEXTA)(
     _In_opt_    LPCSTR lpString
     );
 
-typedef int (__cdecl *LPWSPRINTFA)(
+typedef int(__cdecl *LPWSPRINTFA)(
     _Out_   LPSTR lpOut,
     _In_    LPCSTR lpFmt,
     _In_    ...
     );
 
-typedef ATOM (WINAPI *LPREGISTERCLASSA)(
+typedef ATOM(WINAPI *LPREGISTERCLASSA)(
     _In_    const WNDCLASSA *lpWndClass
     );
 
-typedef ATOM (WINAPI *LPREGISTERCLASSEXA)(
+typedef ATOM(WINAPI *LPREGISTERCLASSEXA)(
     _In_    const WNDCLASSEXA *lpwcx
     );
 
-typedef LRESULT (WINAPI *LPDIALOGBOXPARAMA)(
+typedef LRESULT(WINAPI *LPDIALOGBOXPARAMA)(
     _In_opt_    HINSTANCE hInstance,
     _In_        LPCTSTR lpTemplateName,
     _In_opt_    HWND hWndParent,
     _In_opt_    DLGPROC lpDialogFunc,
     _In_        LPARAM dwInitParam
     );
-    
-typedef BOOL (WINAPI *LPEXITWINDOWSEX)(
+
+typedef BOOL(WINAPI *LPEXITWINDOWSEX)(
     _In_    UINT uFlags,
     _In_    DWORD dwReason
     );
-    
+
 typedef int (WINAPI *LPLOADSTRINGA)(
     _In_opt_    HINSTANCE hInstance,
     _In_        UINT uID,
     _Out_       LPSTR lpBuffer,
     _In_        int nBufferMax
     );
-    
+
 #endif /* __SDK_WAFFLE_PSDK_USER32_H_ */

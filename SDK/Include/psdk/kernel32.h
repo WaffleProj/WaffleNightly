@@ -1,31 +1,31 @@
 #ifndef __SDK_WAFFLE_PSDK_KERNEL32_H_
 #define __SDK_WAFFLE_PSDK_KERNEL32_H_
 
-typedef HRSRC (WINAPI *LPFINDRESOURCEEXA)(
+typedef HRSRC(WINAPI *LPFINDRESOURCEEXA)(
     _In_opt_  HMODULE hModule,
     _In_      LPCSTR lpType,
     _In_      LPCSTR lpName,
     _In_      WORD wLanguage
     );
 
-typedef HRSRC (WINAPI *LPFINDRESOURCEEXW)(
+typedef HRSRC(WINAPI *LPFINDRESOURCEEXW)(
     _In_opt_  HMODULE hModule,
     _In_      LPCWSTR lpType,
     _In_      LPCWSTR lpName,
     _In_      WORD wLanguage
     );
-    
-typedef HGLOBAL (WINAPI *LPLOADRESOURCE)(
-    _In_opt_  HMODULE hModule,
-    _In_      HRSRC hResInfo
-    );
-    
-typedef DWORD (WINAPI* LPSIZEOFRESOURCE)(
+
+typedef HGLOBAL(WINAPI *LPLOADRESOURCE)(
     _In_opt_  HMODULE hModule,
     _In_      HRSRC hResInfo
     );
 
-typedef BOOL (WINAPI *LPCREATEPROCESSA)(
+typedef DWORD(WINAPI* LPSIZEOFRESOURCE)(
+    _In_opt_  HMODULE hModule,
+    _In_      HRSRC hResInfo
+    );
+
+typedef BOOL(WINAPI *LPCREATEPROCESSA)(
     _In_opt_    LPCSTR lpApplicationName,
     _Inout_opt_ LPSTR lpCommandLine,
     _In_opt_    LPSECURITY_ATTRIBUTES lpProcessAttributes,
@@ -38,7 +38,7 @@ typedef BOOL (WINAPI *LPCREATEPROCESSA)(
     _Out_opt_   LPPROCESS_INFORMATION lpProcessInformation
     );
 
-typedef BOOL (WINAPI *LPCREATEPROCESSW)(
+typedef BOOL(WINAPI *LPCREATEPROCESSW)(
     _In_opt_    LPCWSTR lpApplicationName,
     _Inout_opt_ LPWSTR lpCommandLine,
     _In_opt_    LPSECURITY_ATTRIBUTES lpProcessAttributes,
@@ -80,9 +80,9 @@ typedef BOOL(WINAPI *LPFINDNEXTFILEA)(
     _Out_   LPWIN32_FIND_DATAA lpFindFileData
     );
 
-typedef UINT(WINAPI *LPGETACP)(void) ;
+typedef UINT(WINAPI *LPGETACP)(void);
 
-typedef LPSTR(WINAPI *LPGETCOMMANDLINEA)(void) ;
+typedef LPSTR(WINAPI *LPGETCOMMANDLINEA)(void);
 
 typedef BOOL(WINAPI *LPGETCPINFO)(
     _In_    UINT CodePage,
@@ -103,7 +103,7 @@ typedef HMODULE(WINAPI *LPGETMODULEHANDLEA)(
     _In_opt_    LPCSTR lpModuleName
     );
 
-typedef UINT(WINAPI *LPGETOEMCP)(void) ;
+typedef UINT(WINAPI *LPGETOEMCP)(void);
 
 typedef HMODULE(WINAPI *LPLOADLIBRARYA)(
     _In_    LPCSTR lpFileName
@@ -158,7 +158,7 @@ typedef BOOL(WINAPI *LPWOW64DISABLEWOW64FSREDIRECTION)(
 typedef BOOL(WINAPI *LPWOW64REVERTWOW64FSREDIRECTION)(
     _In_    PVOID OldValue
     );
-    
+
 typedef int (WINAPI *LPCOMPARESTRINGA)(
     _In_    LCID Locale,
     _In_    DWORD dwCmpFlags,
@@ -177,7 +177,7 @@ typedef int (WINAPI *LPCOMPARESTRINGW)(
     _In_    int cchCount2
     );
 
-typedef BOOL (WINAPI *LPISDBCSLEADBYTEEX)(
+typedef BOOL(WINAPI *LPISDBCSLEADBYTEEX)(
     _In_    UINT CodePage,
     _In_    BYTE TestChar
     );
@@ -189,19 +189,19 @@ typedef void (WINAPI *LPRAISEEXCEPTION)(
     _In_    const ULONG_PTR *lpArguments
     );
 
-typedef UINT (WINAPI *LPGETPRIVATEPROFILEINTA)(
-        _In_    LPCSTR lpAppName,
-        _In_    LPCSTR lpKeyName,
-        _In_    INT nDefault,
-        _In_    LPCSTR lpFileName
-        );
-        
-typedef DWORD (WINAPI *LPGETPRIVATEPROFILESTRINGA)(
-        _In_    LPCSTR lpAppName,
-        _In_    LPCSTR lpKeyName,
-        _In_    LPCSTR lpDefault,
-        _Out_   LPSTR lpReturnedString,
-        _In_    DWORD nSize,
-        _In_    LPCSTR lpFileName
-        );
+typedef UINT(WINAPI *LPGETPRIVATEPROFILEINTA)(
+    _In_    LPCSTR lpAppName,
+    _In_    LPCSTR lpKeyName,
+    _In_    INT nDefault,
+    _In_    LPCSTR lpFileName
+    );
+
+typedef DWORD(WINAPI *LPGETPRIVATEPROFILESTRINGA)(
+    _In_    LPCSTR lpAppName,
+    _In_    LPCSTR lpKeyName,
+    _In_    LPCSTR lpDefault,
+    _Out_   LPSTR lpReturnedString,
+    _In_    DWORD nSize,
+    _In_    LPCSTR lpFileName
+    );
 #endif /* __SDK_WAFFLE_PSDK_KERNEL32_H_ */

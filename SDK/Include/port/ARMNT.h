@@ -4,7 +4,7 @@
 //http://mamaich-eng.blogspot.ru/2013/02/no-arm-code-on-windows-on-arm.html
 //you can't see ARM code in it. Everything is THUMB2.
 #define WAFFLE_PORT_EXCEPTION_INSTRUCTION                   0xDEFE  //__debugbreak  1101 1110 1111 1110
-                                                                    //              B    Cond imm8
+//                                                                                  B    Cond imm8
 #define WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA              WORD
 #define WAFFLE_PORT_EXCEPTION_CODE                          EXCEPTION_BREAKPOINT
 #define WAFFLE_PORT_WRITE_EXCEPTION_INSTRUCTION(lpAddress)  *(WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_EXCEPTION_INSTRUCTION

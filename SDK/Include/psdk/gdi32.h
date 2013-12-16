@@ -2,18 +2,18 @@
 #define __SDK_WAFFLE_PSDK_GDI32_H_
 
 typedef int (WINAPI *LPENUMFONTSA)(
-  _In_    HDC hdc,
-  _In_    LPCSTR lpFaceName,
-  _In_    FONTENUMPROCA lpFontFunc,
-  _In_    LPARAM lParam
-);
+    _In_    HDC hdc,
+    _In_    LPCSTR lpFaceName,
+    _In_    FONTENUMPROCA lpFontFunc,
+    _In_    LPARAM lParam
+    );
 
 typedef int (WINAPI *LPENUMFONTSW)(
-  _In_    HDC hdc,
-  _In_    LPCWSTR lpFaceName,
-  _In_    FONTENUMPROCW lpFontFunc,
-  _In_    LPARAM lParam
-);
+    _In_    HDC hdc,
+    _In_    LPCWSTR lpFaceName,
+    _In_    FONTENUMPROCW lpFontFunc,
+    _In_    LPARAM lParam
+    );
 
 typedef HFONT(WINAPI *LPCREATEFONTA)(
     _In_    int nHeight,
@@ -49,19 +49,19 @@ typedef HFONT(WINAPI *LPCREATEFONTW)(
     _In_    LPCWSTR lpszFace
     );
 
-typedef HFONT (WINAPI *LPCREATEFONTINDIRECTA)(
+typedef HFONT(WINAPI *LPCREATEFONTINDIRECTA)(
     _In_    const LOGFONTA *lplf
     );
 
-typedef HFONT (WINAPI *LPCREATEFONTINDIRECTW)(
+typedef HFONT(WINAPI *LPCREATEFONTINDIRECTW)(
     _In_    const LOGFONTW *lplf
     );
 
-typedef HFONT (WINAPI *LPCREATEFONTINDIRECTEXA)(
+typedef HFONT(WINAPI *LPCREATEFONTINDIRECTEXA)(
     _In_    const ENUMLOGFONTEXDVA *penumlfex
     );
 
-typedef HFONT (WINAPI *LPCREATEFONTINDIRECTEXW)(
+typedef HFONT(WINAPI *LPCREATEFONTINDIRECTEXW)(
     _In_    const ENUMLOGFONTEXDVW *penumlfex
     );
 

@@ -23,7 +23,7 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleFindLibrary(
         _In_    LPVOID lpMemory
         );
-        
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCopyLibrary(
         _In_    LPWAFFLE_LIBRARY_ARRAY lpstNewLibrary
         );
@@ -31,7 +31,7 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddLibrary(
         _In_    HMODULE hModule
         );
-    
+
     /*
     functionarray.c
     */
@@ -39,12 +39,12 @@ extern "C" {
         _In_    LPWAFFLE_FUNCTION_ARRAY lpstNewFunction,
         _In_    HMODULE hDetour
         );
-        
+
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetBackupAddress(
         _In_    LPCTSTR lpszLibrary,
         _In_    LPCTSTR lpszFunction
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleFindDetourAddress(
         _In_    PVOID ExceptionAddress,
         _In_    PVOID CallerAddress
@@ -55,7 +55,7 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION HMODULE WINAPI WaffleLoadComponent(
         _In_    LPCTSTR lpszComponent
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleAddComponent(
         _In_    LPCTSTR lpszComponent
         );
@@ -67,7 +67,7 @@ extern "C" {
     */
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleArgc(VOID);
 
-    typedef int (WINAPI *LPWAFFLEARGC)(VOID) ;
+    typedef int (WINAPI *LPWAFFLEARGC)(VOID);
 
     WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleArgv(
         _In_    int intPosition,
@@ -95,13 +95,13 @@ extern "C" {
         _In_    DWORD dwLibrary,
         _In_    DWORD dwFunction
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleAddDetour(
         _In_    LPBYTE lpSource,
         _In_    LPCTSTR lpszFunction,
         _In_    HMODULE hDetour
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLoadDetourOption(VOID);
     /*
     exception.c
@@ -109,15 +109,15 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleInlineDetour(
         _In_    LPBYTE  lpFunction
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WaffleInlineHandler(
         _In_    SIZE_T *lpReserved
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION BOOL WINAPI WaffleExceptionDetour(
         _In_    LPBYTE  lpFunction
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LONG CALLBACK WaffleExceptionHandler(
         _In_    PEXCEPTION_POINTERS ExceptionInfo
         );
@@ -130,7 +130,7 @@ extern "C" {
         _In_        DWORD nSize
         );
 
-    typedef VOID (WINAPI *LPWAFFLEGETMODULEDIRECTORY)(
+    typedef VOID(WINAPI *LPWAFFLEGETMODULEDIRECTORY)(
         _In_opt_    HMODULE hModule,
         _Out_       LPTSTR lpFilename,
         _In_        DWORD nSize
@@ -151,7 +151,7 @@ extern "C" {
         _Out_   LPTSTR lpszResult
         );
 
-    typedef VOID (WINAPI *LPWAFFLEGETFILEHASH)(
+    typedef VOID(WINAPI *LPWAFFLEGETFILEHASH)(
         _In_    LPCTSTR lpszFile,
         _Out_   LPTSTR lpszResult
         );
@@ -225,7 +225,7 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFileA(
         _In_    LPCSTR lpszMessage
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleWriteLogFileW(
         _In_    LPCWSTR lpszMessage
         );
@@ -235,7 +235,7 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCheckOptionEncoding(
         _In_    LPCTSTR lpFileName
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetOptionString(
         _In_        LPCTSTR lpszKeyName,
         _Inout_     LPTSTR lpszValue,
@@ -259,19 +259,19 @@ extern "C" {
         _In_    int nValue,
         _In_    BOOL bGlobal
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionStringNumber(
         _In_    LPCTSTR lpszString
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionNames(
         _In_    LPCTSTR lpszOption
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPTSTR WINAPI WaffleGetOptionSectionKeys(
         _In_    LPCTSTR lpszOption,
         _In_    LPCTSTR lpszSection
-        );    
+        );
     /*
     pemachine.c
     */
@@ -288,21 +288,21 @@ extern "C" {
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrlenW(
         _In_    LPCWSTR lpString
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrlenA(
         _In_    LPCSTR lpString
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPWSTR WINAPI WafflelstrcatW(
         _In_    LPWSTR lpString1,
         _In_    LPCWSTR lpString2
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPSTR WINAPI WafflelstrcatA(
         _In_    LPSTR lpString1,
         _In_    LPCSTR lpString2
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION int WINAPI WafflelstrcmpiW(
         _In_    LPCWSTR lpString1,
         _In_    LPCWSTR lpString2
@@ -332,27 +332,27 @@ extern "C" {
         _In_    LPCSTR lpString,
         _In_    int nDefault
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCreateRWLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleReleaseRWLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleEnterWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLeaveWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleEnterReaderLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLeaveReaderLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
@@ -366,32 +366,32 @@ extern "C" {
         _In_    HMODULE hDll,
         _In_    LPCSTR lpszFuncName
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleIntBox(
         int i
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleHexBox(
         DWORD i
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION DWORD WINAPI WaffleGetImageSize(
         HMODULE hModule
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetCallersAddress(
         _Out_   LPVOID *CallersCaller
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleAlloc(
         _In_    SIZE_T dwBytes
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleReAlloc(
         _In_    LPVOID lpMemory,
         _In_    SIZE_T dwBytes
         );
-    
+
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleFree(
         _In_    LPVOID lpMemory
         );
@@ -400,15 +400,15 @@ extern "C" {
     */
     WAFFLE_COMMON_DLL_FUNCTION LPWAFFLE_PROCESS_SETTING WINAPI WaffleOpenProcessSetting(VOID);
 
-    typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLEOPENPROCESSSETTING)(VOID) ;
+    typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLEOPENPROCESSSETTING)(VOID);
 
     WAFFLE_COMMON_DLL_FUNCTION LPWAFFLE_PROCESS_SETTING WINAPI WaffleCreateProcessSetting(VOID);
 
-    typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLECREATEPROCESSSETTING)(VOID) ;
+    typedef LPWAFFLE_PROCESS_SETTING(WINAPI *LPWAFFLECREATEPROCESSSETTING)(VOID);
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleResumeMainThread(VOID);
 
-    typedef VOID (WINAPI *LPWAFFLERESUMEMAINTHREAD)(VOID) ;
+    typedef VOID(WINAPI *LPWAFFLERESUMEMAINTHREAD)(VOID);
 
 #ifdef __cplusplus
 };

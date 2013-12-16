@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.21126.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.common.1.0.dll", "..\Waffle\Waffle.common.1.0.dll\Waffle.common.1.0.dll.vcxproj", "{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}"
 EndProject
@@ -117,11 +117,14 @@ Global
 		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|Win32.Build.0 = Release|Win32
 		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|x64.ActiveCfg = Release|x64
 		{30000C06-C81C-4575-98CA-E4D362F9E42E}.Release|x64.Build.0 = Release|x64
-		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|ARM.ActiveCfg = Debug|Win32
-		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|Itanium.ActiveCfg = Debug|Win32
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|ARM.Build.0 = Debug|ARM
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|Itanium.Build.0 = Debug|Itanium
 		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|Win32.ActiveCfg = Debug|Win32
 		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|Win32.Build.0 = Debug|Win32
-		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|x64.ActiveCfg = Debug|Win32
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|x64.ActiveCfg = Debug|x64
+		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Debug|x64.Build.0 = Debug|x64
 		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Release|ARM.ActiveCfg = Release|ARM
 		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Release|ARM.Build.0 = Release|ARM
 		{4EEE6038-7BB5-4965-99CF-39F13AA23EFB}.Release|Itanium.ActiveCfg = Release|Itanium
@@ -274,16 +277,22 @@ Global
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|Win32.Build.0 = Release|Win32
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|x64.ActiveCfg = Release|x64
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420}.Release|x64.Build.0 = Release|x64
-		{C49122AB-629F-4C13-923B-71188177B072}.Debug|ARM.ActiveCfg = Debug|Win32
-		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Itanium.ActiveCfg = Debug|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|ARM.Build.0 = Debug|ARM
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Itanium.Build.0 = Debug|Itanium
 		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Win32.ActiveCfg = Debug|Win32
 		{C49122AB-629F-4C13-923B-71188177B072}.Debug|Win32.Build.0 = Debug|Win32
-		{C49122AB-629F-4C13-923B-71188177B072}.Debug|x64.ActiveCfg = Debug|Win32
-		{C49122AB-629F-4C13-923B-71188177B072}.Release|ARM.ActiveCfg = Release|Win32
-		{C49122AB-629F-4C13-923B-71188177B072}.Release|Itanium.ActiveCfg = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|x64.ActiveCfg = Debug|x64
+		{C49122AB-629F-4C13-923B-71188177B072}.Debug|x64.Build.0 = Debug|x64
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|ARM.ActiveCfg = Release|ARM
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|ARM.Build.0 = Release|ARM
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|Itanium.ActiveCfg = Release|Itanium
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|Itanium.Build.0 = Release|Itanium
 		{C49122AB-629F-4C13-923B-71188177B072}.Release|Win32.ActiveCfg = Release|Win32
 		{C49122AB-629F-4C13-923B-71188177B072}.Release|Win32.Build.0 = Release|Win32
-		{C49122AB-629F-4C13-923B-71188177B072}.Release|x64.ActiveCfg = Release|Win32
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|x64.ActiveCfg = Release|x64
+		{C49122AB-629F-4C13-923B-71188177B072}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
