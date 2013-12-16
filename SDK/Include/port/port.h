@@ -22,7 +22,7 @@
 #define WAFFLE_PORT_MACHINE_STRING_THUMB    TEXT("THUMB")
 
 //http://msdn.microsoft.com/en-us/library/windows/desktop/ms680646(v=vs.85).aspx
-#if	defined(_M_IX86)
+#if     defined(_M_IX86)
 #include "I386.h"
 #elif   defined(_M_AMD64)
 #include "AMD64.h"
@@ -30,15 +30,19 @@
 #include "IA64.h"
 #elif   defined(_M_ARM)
 #include "ARMNT.h"
-#elif   defined(_M_ARM64)
-#error   ARMv8 is unsupported right now.
 #else
 #error   Unknown platform.
 #endif
 
-#if	defined(WAFFLE_PORT_ENTRY_POINT)
-#define WAFFLE_PORT_ENTRY_POINT_LOOP                        ((LPBYTE) WAFFLE_PORT_ENTRY_POINT_LOOP_STRING)
-#define WAFFLE_PORT_ENTRY_POINT_LOOP_SIZE                   (sizeof(WAFFLE_PORT_ENTRY_POINT_LOOP_STRING) - 1)
+#if defined(WAFFLE_PORT_ENTRY_POINT)
+#define WAFFLE_PORT_ENTRY_POINT_LOOP        ((LPBYTE) WAFFLE_PORT_ENTRY_POINT_LOOP_STRING)
+#define WAFFLE_PORT_ENTRY_POINT_LOOP_SIZE   (sizeof(WAFFLE_PORT_ENTRY_POINT_LOOP_STRING) - 1)
+#endif
+
+#if     defined(__GNUC__)
+#define WAFFLE_PORT_RETURN_ADDRESS __builtin_return_address(0)
+#elif   defined(_MSC_VER)
+#define WAFFLE_PORT_RETURN_ADDRESS _ReturnAddress()
 #endif
 
 #endif /* __SDK_WAFFLE_PORT_PORT_H_ */
