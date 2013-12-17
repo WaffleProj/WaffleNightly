@@ -379,10 +379,6 @@ extern "C" {
         HMODULE hModule
         );
 
-    WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleGetCallersAddress(
-        _Out_   LPVOID *CallersCaller
-        );
-
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleAlloc(
         _In_    SIZE_T dwBytes
         );
