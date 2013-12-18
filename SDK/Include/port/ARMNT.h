@@ -8,12 +8,12 @@
 //#define WAFFLE_PORT_EXCEPTION_CODE                          EXCEPTION_ILLEGAL_INSTRUCTION
 #define WAFFLE_PORT_WRITE_EXCEPTION_INSTRUCTION(lpAddress)  (*(WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_EXCEPTION_INSTRUCTION)
 
-#define WAFFLE_PORT_ADDRESS_CONVERT(lpFunction)             ((LPBYTE) ((SSIZE_T) lpFunction & -2))
+#define WAFFLE_PORT_INSTRUCTION_ADDRESS_TO_PHYSICAL_ADDRESS(lpFunction)             ((LPBYTE) ((SSIZE_T) lpFunction & -2))
 
 #define WAFFLE_PORT_PROGRAM_POINTER                         Pc
 #define WAFFLE_PORT_STACK_POINTER                           Sp
 #define WAFFLE_PORT_FRAME_POINTER                           R11
-#define WAFFLE_PORT_EXCEPTION_GET_CALLER(ExceptionInfo)     (ExceptionInfo->ContextRecord->Lr - 1)
+#define WAFFLE_PORT_EXCEPTION_GET_CALLER(ExceptionInfo)     WAFFLE_PORT_INSTRUCTION_ADDRESS_TO_PHYSICAL_ADDRESS(ExceptionInfo->ContextRecord->Lr)
 
 //#define WAFFLE_PORT_ENTRY_POINT                             
 //#define WAFFLE_PORT_ENTRY_POINT_LOOP_STRING                 
