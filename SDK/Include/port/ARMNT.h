@@ -8,6 +8,8 @@
 //#define WAFFLE_PORT_EXCEPTION_CODE                          EXCEPTION_ILLEGAL_INSTRUCTION
 #define WAFFLE_PORT_WRITE_EXCEPTION_INSTRUCTION(lpAddress)  (*(WAFFLE_PORT_EXCEPTION_INSTRUCTION_DATA *)(lpAddress) = WAFFLE_PORT_EXCEPTION_INSTRUCTION)
 
+#define WAFFLE_PORT_ADDRESS_CONVERT(lpFunction)             ((LPBYTE) ((SSIZE_T) lpFunction & -2))
+
 #define WAFFLE_PORT_PROGRAM_POINTER                         Pc
 #define WAFFLE_PORT_STACK_POINTER                           Sp
 #define WAFFLE_PORT_FRAME_POINTER                           R11
