@@ -9,7 +9,7 @@ extern "C" {
 #define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_EXPORT
 #else
 
-#if     defined(_MSC_VER)
+#ifdef _MSC_VER
 #define WAFFLE_COMMON_DLL_FUNCTION LIBRARY_IMPORT
 #else
 #define WAFFLE_COMMON_DLL_FUNCTION
