@@ -206,6 +206,18 @@ extern "C" {
         _In_    LPCTSTR lpszDllFull
         );
 
+    WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleExecuteTo(
+        _In_    HANDLE hProcess,
+        _In_    HANDLE hThread,
+        _In_    LPBYTE lpProgramCounter
+        );
+    
+    typedef VOID(WINAPI *LPWAFFLEEXECUTETO)(
+        _In_    HANDLE hProcess,
+        _In_    HANDLE hThread,
+        _In_    LPBYTE lpProgramCounter
+        );
+    
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleExecute(
         _Out_opt_   LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
         _In_opt_    LPCTSTR lpApplicationName,

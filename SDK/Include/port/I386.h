@@ -16,8 +16,7 @@
 #define WAFFLE_PORT_FRAME_POINTER                           Ebp
 #define WAFFLE_PORT_EXCEPTION_GET_CALLER(ExceptionInfo)     (*(SIZE_T *)(ExceptionInfo->ContextRecord->WAFFLE_PORT_STACK_POINTER))
 
-#define WAFFLE_PORT_ENTRY_POINT                             Eax
-#define WAFFLE_PORT_ENTRY_POINT_LOOP_STRING                 "\xEB\xFE"
+#define WAFFLE_PORT_ENTRY_POINT_LOOP_INSTRUCTION            "\xEB\xFE"
 
 #define WAFFLE_PORT_MACHINE             WAFFLE_PORT_MACHINE_I386
 #define WAFFLE_PORT_MACHINE_STRING      WAFFLE_PORT_MACHINE_STRING_I386
