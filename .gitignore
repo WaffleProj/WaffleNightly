@@ -6,4 +6,5 @@ Option.ini
 *.lastcodeanalysissucceeded
 *.suo
 *.sdf
+*.ilk
 *.opensdf
