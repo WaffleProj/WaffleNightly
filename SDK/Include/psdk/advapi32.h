@@ -8,11 +8,11 @@
 #endif
 
 typedef BOOL(WINAPI *LPCRYPTACQUIRECONTEXTW)(
-    _Out_   HCRYPTPROV *phProv,
-    _In_    LPCWSTR pszContainer,
-    _In_    LPCWSTR pszProvider,
-    _In_    DWORD dwProvType,
-    _In_    DWORD dwFlags
+    _Out_       HCRYPTPROV *phProv,
+    _In_opt_    LPCWSTR pszContainer,
+    _In_opt_    LPCWSTR pszProvider,
+    _In_        DWORD dwProvType,
+    _In_        DWORD dwFlags
     );
 
 typedef BOOL(WINAPI *LPCRYPTACQUIRECONTEXTA)(

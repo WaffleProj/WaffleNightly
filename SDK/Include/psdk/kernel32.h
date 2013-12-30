@@ -35,7 +35,7 @@ typedef BOOL(WINAPI *LPCREATEPROCESSA)(
     _In_opt_    LPVOID lpEnvironment,
     _In_opt_    LPCSTR lpCurrentDirectory,
     _In_opt_    LPSTARTUPINFOA lpStartupInfo,
-    _Out_opt_   LPPROCESS_INFORMATION lpProcessInformation
+    _Out_       LPPROCESS_INFORMATION lpProcessInformation
     );
 
 typedef BOOL(WINAPI *LPCREATEPROCESSW)(
@@ -48,7 +48,7 @@ typedef BOOL(WINAPI *LPCREATEPROCESSW)(
     _In_opt_    LPVOID lpEnvironment,
     _In_opt_    LPCWSTR lpCurrentDirectory,
     _In_opt_    LPSTARTUPINFOW lpStartupInfo,
-    _Out_opt_   LPPROCESS_INFORMATION lpProcessInformation
+    _Out_       LPPROCESS_INFORMATION lpProcessInformation
     );
 
 typedef BOOL(WINAPI *LPCREATEDIRECTORYA)(

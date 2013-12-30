@@ -21,8 +21,20 @@
 #ifndef  _Out_
 #define  _Out_
 #endif
-#ifndef  _Out_opt_
-#define  _Out_opt_
+#ifndef  _Outptr_
+#define  _Outptr_
+#endif
+#ifndef  _Outptr_
+#define  _Outptr_
+#endif
+#ifndef  _Out_writes_
+#define  _Out_writes_(x)
+#endif
+#ifndef  _Out_writes_to_opt_
+#define  _Out_writes_to_opt_(x)
+#endif
+#ifndef  _Out_writes_bytes_all_
+#define  _Out_writes_bytes_all_(x)
 #endif
 #ifndef  _Inout_
 #define  _Inout_
@@ -32,6 +44,9 @@
 #endif
 #ifndef  _Reserved_
 #define  _Reserved_
+#endif
+#ifndef  _Frees_ptr_opt_
+#define  _Frees_ptr_opt_
 #endif
 
 #define LIBRARY_EXPORT      __declspec(dllexport)
@@ -49,28 +64,28 @@ extern "C" {
 
 #undef  RtlMoveMemory
     VOID WINAPI RtlMoveMemory(
-        _In_    PVOID Destination,
+        _Out_writes_bytes_all_(Length)  PVOID Destination,
         _In_    const VOID *Source,
         _In_    SIZE_T Length
         );
 
 #undef  RtlCopyMemory
     VOID WINAPI RtlCopyMemory(
-        _In_    PVOID Destination,
+        _Out_writes_bytes_all_(Length)  PVOID Destination,
         _In_    const VOID *Source,
         _In_    SIZE_T Length
         );
 
 #undef  RtlFillMemory
     VOID WINAPI RtlFillMemory(
-        _Out_   PVOID Destination,
+        _Out_writes_bytes_all_(Length)  PVOID Destination,
         _In_    SIZE_T Length,
         _In_    BYTE Fill
         );
 
 #undef  RtlZeroMemory
     VOID WINAPI RtlZeroMemory(
-        _In_    PVOID Destination,
+        _Out_writes_bytes_all_(Length)  PVOID Destination,
         _In_    SIZE_T Length
         );
 
@@ -81,6 +96,28 @@ extern "C" {
 #include "shell32.h"
 #include "psapi.h"
 #include "comctl32.h"
+
+#ifdef WAFFLE_DISABLE_CODE_ANALYSIS
+#ifdef _When_
+#undef _When_
+#endif
+#define _When_(x,y)
+
+#ifdef _Success_
+#undef _Success_
+#endif
+#define _Success_(x)
+
+#ifdef _Check_return_
+#undef _Check_return_
+#endif
+#define _Check_return_
+
+#ifdef _Ret_maybenull_
+#undef _Ret_maybenull_
+#endif
+#define _Ret_maybenull_
+#endif
 
 #ifdef __cplusplus
 };

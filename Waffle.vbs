@@ -1,5 +1,5 @@
 Function GetCommandLine()
-    'This function is bought you by Demon<http://demon.tw>. Thank you!
+    'This function is brought to you by Demon<http://demon.tw>. Thank you!
     'But I still need to modify some codes...
 
     Dim objServices, colItems, objItem
@@ -33,7 +33,7 @@ Function CheckSystemVersion()
             CheckSystemVersion = CheckSystemVersion * 10 + Mid(objOS.Version, i, 1)
         Next
         If CheckSystemVersion < 51 Then
-            MsgBox  "Waffle requires at least Windows XP, please update your system."
+            MsgBox  "Waffle requires at least Windows XP. Please update your system."
             WScript.Quit
         End If
     Next

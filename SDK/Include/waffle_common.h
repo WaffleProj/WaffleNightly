@@ -70,9 +70,9 @@ extern "C" {
     typedef int (WINAPI *LPWAFFLEARGC)(void);
 
     WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleArgv(
-        _In_    int intPosition,
-        _In_    LPTSTR lpString,
-        _In_    int intSize
+        _In_                int intPosition,
+        _Out_writes_(nSize) LPTSTR lpString,
+        _In_                int nSize
         );
 
     typedef SIZE_T(WINAPI *LPWAFFLEARGV)(
@@ -125,9 +125,9 @@ extern "C" {
     filesystem.c
     */
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetModuleDirectory(
-        _In_opt_    HMODULE hModule,
-        _Out_       LPTSTR lpFilename,
-        _In_        DWORD nSize
+        _In_opt_            HMODULE hModule,
+        _Out_writes_(nSize) LPTSTR lpFilename,
+        _In_                DWORD nSize
         );
 
     typedef VOID(WINAPI *LPWAFFLEGETMODULEDIRECTORY)(
@@ -219,8 +219,8 @@ extern "C" {
         );
     
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleExecute(
-        _Out_opt_   LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
-        _In_opt_    LPCTSTR lpApplicationName,
+        _Out_       LPWAFFLE_PROCESS_SETTING lpstProcessSetting,
+        _In_        LPCTSTR lpApplicationName,
         _Inout_opt_ LPTSTR lpCommandLine,
         _In_opt_    LPCTSTR lpCurrentDirectory
         );
@@ -250,7 +250,7 @@ extern "C" {
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetOptionString(
         _In_        LPCTSTR lpszKeyName,
-        _Inout_     LPTSTR lpszValue,
+        _Out_       LPTSTR lpszValue,
         _In_        DWORD nSize,
         _In_opt_    LPTSTR lpszDefaultValue
         );
@@ -353,10 +353,12 @@ extern "C" {
         LPWAFFLE_RWLOCK lpstRWLock
         );
 
+    _When_(!lpstRWLock->dwReader, _Acquires_lock_(lpstRWLock->csWrite))
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleEnterWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
 
+    _When_(TRUE, _Releases_lock_(lpstRWLock->csWrite))
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleLeaveWriterLock(
         LPWAFFLE_RWLOCK lpstRWLock
         );
@@ -370,13 +372,13 @@ extern "C" {
         );
 
     WAFFLE_COMMON_DLL_FUNCTION LPBYTE WINAPI WaffleGetProcAddressW(
-        _In_    HMODULE hDll,
-        _In_    LPCWSTR lpszFuncName
+        _In_opt_    HMODULE hDll,
+        _In_        LPCWSTR lpszFuncName
         );
 
     WAFFLE_COMMON_DLL_FUNCTION LPBYTE WINAPI WaffleGetProcAddressA(
-        _In_    HMODULE hDll,
-        _In_    LPCSTR lpszFuncName
+        _In_opt_    HMODULE hDll,
+        _In_        LPCSTR lpszFuncName
         );
 
     WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleIntBox(
@@ -400,8 +402,10 @@ extern "C" {
         _In_    SIZE_T dwBytes
         );
 
+    _Ret_maybenull_
+    _Success_(return == 0)
     WAFFLE_COMMON_DLL_FUNCTION LPVOID WINAPI WaffleFree(
-        _In_    LPVOID lpMemory
+        _Frees_ptr_opt_ LPVOID lpMemory
         );
     /*
     setting.c

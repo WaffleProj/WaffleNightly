@@ -28,6 +28,7 @@
 #include "AMD64.h"
 #elif   defined(_M_IA64)
 #include "IA64.h"
+#define WAFFLE_DISABLE_CODE_ANALYSIS
 #elif   defined(_M_ARM)
 #include "ARMNT.h"
 #else
