@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21126.0
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.common.1.0.dll", "..\Waffle\Waffle.common.1.0.dll\Waffle.common.1.0.dll.vcxproj", "{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}"
 EndProject
@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Waffle.loader.1.0.dll", "..
 	ProjectSection(ProjectDependencies) = postProject
 		{9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE} = {9DE226A0-8EE0-4F11-83D0-15DB3BA76BCE}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PomiCo.res.2.51.dll", "..\PomiCo\PomiCo.res.2.51.dll\PomiCo.res.2.51.dll.vcxproj", "{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -290,6 +292,16 @@ Global
 		{73C4DE97-A94E-4FB2-91B2-D71BD6E24C34}.Release|Win32.Build.0 = Release|Win32
 		{73C4DE97-A94E-4FB2-91B2-D71BD6E24C34}.Release|x64.ActiveCfg = Release|x64
 		{73C4DE97-A94E-4FB2-91B2-D71BD6E24C34}.Release|x64.Build.0 = Release|x64
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Debug|ARM.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Debug|Itanium.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Debug|Win32.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Debug|Win32.Build.0 = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Debug|x64.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Release|ARM.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Release|Itanium.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Release|Win32.ActiveCfg = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Release|Win32.Build.0 = Release|Win32
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -312,6 +324,7 @@ Global
 		{EF7FDF0C-68E3-40D9-BA2F-25D976851F18} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 		{3084CB07-CF01-40BA-A49B-C9EC3D4E0420} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 		{0FF41619-CB59-4AE5-AA39-F89CAE93B208} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
+		{8BD2AA43-1E2F-420F-BEDF-31967F99BDDA} = {ACE7AD1C-46B0-40B6-A8A9-CF8F69D226D2}
 		{C49122AB-629F-4C13-923B-71188177B072} = {46CEC47B-28A2-487D-A186-F4D756C42FC2}
 	EndGlobalSection
 EndGlobal

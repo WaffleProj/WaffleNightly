@@ -47,6 +47,8 @@
 
 #define WaffleOpenProcessSetting WaffleOpenProcessSettingW
 #define WaffleCreateProcessSetting WaffleCreateProcessSettingW
+#define WaffleShareProcessSetting WaffleShareProcessSettingW
+#define WaffleInitProcessSetting WaffleInitProcessSettingW
 
 #else
 

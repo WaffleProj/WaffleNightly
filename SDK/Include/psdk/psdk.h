@@ -49,8 +49,14 @@
 #define  _Frees_ptr_opt_
 #endif
 
+#ifdef __cplusplus
+#define LIBRARY_EXPORT      extern "C" __declspec(dllexport)
+#define LIBRARY_IMPORT      extern "C" __declspec(dllimport)
+#else
 #define LIBRARY_EXPORT      __declspec(dllexport)
 #define LIBRARY_IMPORT      __declspec(dllimport)
+#endif
+
 #define INLINE              inline
 #if     defined(__GNUC__)
 #define NOINLINE            __attribute__((noinline))
@@ -58,36 +64,34 @@
 #define NOINLINE            __declspec(noinline)
 #endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#define lengthof(x)     (sizeof((x))/sizeof((x)[0]))
 
 #undef  RtlMoveMemory
-    VOID WINAPI RtlMoveMemory(
-        _Out_writes_bytes_all_(Length)  PVOID Destination,
-        _In_    const VOID *Source,
-        _In_    SIZE_T Length
-        );
+LIBRARY_IMPORT VOID WINAPI RtlMoveMemory(
+    _Out_writes_bytes_all_(Length)  PVOID Destination,
+    _In_    const VOID *Source,
+    _In_    SIZE_T Length
+    );
 
 #undef  RtlCopyMemory
-    VOID WINAPI RtlCopyMemory(
-        _Out_writes_bytes_all_(Length)  PVOID Destination,
-        _In_    const VOID *Source,
-        _In_    SIZE_T Length
-        );
+LIBRARY_IMPORT VOID WINAPI RtlCopyMemory(
+    _Out_writes_bytes_all_(Length)  PVOID Destination,
+    _In_    const VOID *Source,
+    _In_    SIZE_T Length
+    );
 
 #undef  RtlFillMemory
-    VOID WINAPI RtlFillMemory(
-        _Out_writes_bytes_all_(Length)  PVOID Destination,
-        _In_    SIZE_T Length,
-        _In_    BYTE Fill
-        );
+LIBRARY_IMPORT VOID WINAPI RtlFillMemory(
+    _Out_writes_bytes_all_(Length)  PVOID Destination,
+    _In_    SIZE_T Length,
+    _In_    BYTE Fill
+    );
 
 #undef  RtlZeroMemory
-    VOID WINAPI RtlZeroMemory(
-        _Out_writes_bytes_all_(Length)  PVOID Destination,
-        _In_    SIZE_T Length
-        );
+LIBRARY_IMPORT VOID WINAPI RtlZeroMemory(
+    _Out_writes_bytes_all_(Length)  PVOID Destination,
+    _In_    SIZE_T Length
+    );
 
 #include "kernel32.h"
 #include "user32.h"
@@ -117,10 +121,6 @@ extern "C" {
 #undef _Ret_maybenull_
 #endif
 #define _Ret_maybenull_
-#endif
-
-#ifdef __cplusplus
-};
 #endif
 
 #endif /* __SDK_WAFFLE_PSDK_PSDK_H_ */
