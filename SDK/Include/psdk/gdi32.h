@@ -8,6 +8,21 @@ typedef int (WINAPI *LPENUMFONTSA)(
     _In_    LPARAM lParam
     );
 
+typedef int (WINAPI *LPENUMFONTFAMILIESA)(
+    _In_    HDC hdc,
+    _In_    LPCSTR lpszFamily,
+    _In_    FONTENUMPROCA lpEnumFontFamProc,
+    _In_    LPARAM lParam
+    );
+
+typedef int (WINAPI *LPENUMFONTFAMILIESEXA)(
+    _In_    HDC hdc,
+    _In_    LPLOGFONTA lpLogfont,
+    _In_    FONTENUMPROCA lpEnumFontFamExProc,
+    _In_    LPARAM lParam,
+    _In_    DWORD dwFlags
+    );
+
 typedef int (WINAPI *LPENUMFONTSW)(
     _In_    HDC hdc,
     _In_    LPCWSTR lpFaceName,

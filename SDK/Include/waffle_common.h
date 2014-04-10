@@ -245,27 +245,35 @@ WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleCheckOptionEncoding(
     );
 
 WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleGetOptionString(
+    _In_opt_    LPCTSTR lpszFileName,
+    _In_opt_    LPCTSTR lpszSectionName,
     _In_        LPCTSTR lpszKeyName,
     _Out_       LPTSTR lpszValue,
     _In_        DWORD nSize,
-    _In_opt_    LPTSTR lpszDefaultValue
+    _In_opt_    LPCTSTR lpszDefaultValue
     );
 
 WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetOptionString(
-    _In_    LPCTSTR lpszKeyName,
-    _In_    LPCTSTR lpszValue,
-    _In_    BOOL bGlobal
+    _In_opt_    LPCTSTR lpszFileName,
+    _In_opt_    LPCTSTR lpszSectionName,
+    _In_        LPCTSTR lpszKeyName,
+    _In_        LPCTSTR lpszValue,
+    _In_        BOOL bGlobal
     );
 
 WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionInt(
+    _In_opt_    LPCTSTR lpszFileName,
+    _In_opt_    LPCTSTR lpszSectionName,
     _In_        LPCTSTR lpszKeyName,
     _In_opt_    int nDefaultValue
     );
 
 WAFFLE_COMMON_DLL_FUNCTION VOID WINAPI WaffleSetOptionInt(
-    _In_    LPCTSTR lpszKeyName,
-    _In_    int nValue,
-    _In_    BOOL bGlobal
+    _In_opt_    LPCTSTR lpszFileName,
+    _In_opt_    LPCTSTR lpszSectionName,
+    _In_        LPCTSTR lpszKeyName,
+    _In_        int nValue,
+    _In_        BOOL bGlobal
     );
 
 WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleGetOptionStringNumber(
