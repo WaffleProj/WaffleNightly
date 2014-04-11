@@ -33,7 +33,7 @@ Function CheckSystemVersion()
             CheckSystemVersion = CheckSystemVersion * 10 + Mid(objOS.Version, i, 1)
         Next
         If CheckSystemVersion < 51 Then
-            MsgBox  "Waffle requires at least Windows XP. Please update your system."
+            MsgBox "Waffle requires at least Windows XP. Please update your system."
             WScript.Quit
         End If
     Next
@@ -45,7 +45,7 @@ Set WShell = CreateObject("WScript.Shell")
 
 PATH = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))
 WAFFLE_PORT_MACHINE_STRING = WShell.ExpandEnvironmentStrings("%PROCESSOR_ARCHITECTURE%")
-COMMANDLINE = Mid(GetCommandLine(), Len(WScript.ScriptFullName) + 5)
+COMMANDLINE = Mid(GetCommandLine(), Len(WScript.ScriptFullName) + 3)
 
 Select  Case WAFFLE_PORT_MACHINE_STRING
 Case    "x86"

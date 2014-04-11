@@ -45,28 +45,29 @@ Set WShell = CreateObject("WScript.Shell")
 
 PATH = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))
 WAFFLE_PORT_MACHINE_STRING = WShell.ExpandEnvironmentStrings("%PROCESSOR_ARCHITECTURE%")
-COMMANDLINE = Mid(GetCommandLine(), Len(WScript.ScriptFullName) + 5)
+COMMANDLINE = Mid(GetCommandLine(), Len(WScript.ScriptFullName) + 3)
 
 Select  Case WAFFLE_PORT_MACHINE_STRING
 Case    "x86"
-    WAFFLE = PATH & "Component\Waffle\I386\Waffle.shell.1.0.dll"
+    WAFFLE = PATH & "Waffle.vbs"
 Case    "AMD64"
-    WAFFLE = PATH & "Component\Waffle\AMD64\Waffle.shell.1.0.dll"
+    WAFFLE = PATH & "Waffle.vbs"
 Case    "ARM"
-    WAFFLE = PATH & "Component\Waffle\ARMNT\Waffle.shell.1.0.dll"
+    WAFFLE = PATH & "Waffle.vbs"
 Case    "IA64"
-    WAFFLE = PATH & "Component\Waffle\IA64\Waffle.shell.1.0.dll"
+    WAFFLE = PATH & "Waffle.vbs"
 Case    Else
     MsgBox "Unsupported platform"
     WScript.Quit
 End     Select
 
-TEXT = "Press Yes to install Waffle Shell Extension." & vbCrLf & "Press No to uninstall Waffle Shell Extension." & vbCrLf & "WE WILL RESTART YOUR WINDOWS EXPLORER!"
+TEXT = "Press Yes to install Waffle Shell Extension." & vbCrLf & "Press No to uninstall Waffle Shell Extension."
 If MsgBox(TEXT, vbYesNo, "Waffle Shell Extension") = vbYes Then
-    WShell.Run "regsvr32 /s """ & WAFFLE & """", 0, true
+    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle\", "Waffle", "REG_SZ"
+    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle\command\", "wscript """ & WAFFLE & """ mojibake ""%1""", "REG_SZ"
+    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle_option\", "Waffle Option...", "REG_SZ"
 Else
-    WShell.Run "regsvr32 /s /u """ & WAFFLE & """", 0, true
+    WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle\command\"
+    WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle\"
+    WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle_option\"
 End If
-WShell.Run "taskkill /f /im explorer.exe", 0, true
-WShell.Run "explorer"
-WShell.Run "explorer """ & PATH & """"
