@@ -33,7 +33,7 @@ Function CheckSystemVersion()
             CheckSystemVersion = CheckSystemVersion * 10 + Mid(objOS.Version, i, 1)
         Next
         If CheckSystemVersion < 51 Then
-            MsgBox "Waffle requires at least Windows XP. Please update your system."
+            MsgBox  "Waffle requires at least Windows XP. Please update your system."
             WScript.Quit
         End If
     Next
