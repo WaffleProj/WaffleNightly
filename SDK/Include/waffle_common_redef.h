@@ -40,6 +40,7 @@
 
 #define Wafflelstrlen WafflelstrlenW
 #define Wafflelstrcat WafflelstrcatW
+#define Wafflelstrcpy WafflelstrcpyW
 #define Wafflelstrcmpi WafflelstrcmpiW
 #define Wafflelstrcmp WafflelstrcmpW
 #define WaffleStrToInt WaffleStrToIntW
@@ -56,6 +57,7 @@
 
 #define Wafflelstrlen WafflelstrlenA
 #define Wafflelstrcat WafflelstrcatA
+#define Wafflelstrcpy WafflelstrcpyA
 #define Wafflelstrcmpi WafflelstrcmpiA
 #define Wafflelstrcmp WafflelstrcmpA
 #define WaffleStrToInt WaffleStrToIntA

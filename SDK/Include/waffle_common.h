@@ -61,28 +61,36 @@ WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleFindComponent(
 /*
 cmdarg.c
 */
-WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleArgc(void);
+WAFFLE_COMMON_DLL_FUNCTION int WINAPI WaffleArgc(
+    _In_opt_    LPCTSTR lpCmdLine
+    );
 
-typedef int (WINAPI *LPWAFFLEARGC)(void);
+typedef int (WINAPI *LPWAFFLEARGC)(
+    _In_opt_    LPCTSTR lpCmdLine
+    );
 
 WAFFLE_COMMON_DLL_FUNCTION SIZE_T WINAPI WaffleArgv(
+    _In_opt_            LPCTSTR lpCmdLine,
     _In_                int intPosition,
     _Out_writes_(nSize) LPTSTR lpString,
     _In_                int nSize
     );
 
 typedef SIZE_T(WINAPI *LPWAFFLEARGV)(
-    _In_    int intPosition,
-    _In_    LPTSTR lpString,
-    _In_    int intSize
+    _In_opt_            LPCTSTR lpCmdLine,
+    _In_                int intPosition,
+    _Out_writes_(nSize) LPTSTR lpString,
+    _In_                int nSize
     );
 
 WAFFLE_COMMON_DLL_FUNCTION LPCTSTR WINAPI WaffleArgp(
-    _In_    int intPosition
+    _In_opt_    LPCTSTR lpCmdLine,
+    _In_        int intPosition
     );
 
 typedef LPCTSTR(WINAPI *LPWAFFLEARGP)(
-    _In_    int intPosition
+    _In_opt_    LPCTSTR lpCmdLine,
+    _In_        int intPosition
     );
 /*
 detour.c
@@ -315,6 +323,16 @@ WAFFLE_COMMON_DLL_FUNCTION LPWSTR WINAPI WafflelstrcatW(
     );
 
 WAFFLE_COMMON_DLL_FUNCTION LPSTR WINAPI WafflelstrcatA(
+    _In_    LPSTR lpString1,
+    _In_    LPCSTR lpString2
+    );
+
+WAFFLE_COMMON_DLL_FUNCTION LPWSTR WINAPI WafflelstrcpyW(
+    _In_    LPWSTR lpString1,
+    _In_    LPCWSTR lpString2
+    );
+
+WAFFLE_COMMON_DLL_FUNCTION LPSTR WINAPI WafflelstrcpyA(
     _In_    LPSTR lpString1,
     _In_    LPCSTR lpString2
     );

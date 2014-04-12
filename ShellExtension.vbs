@@ -64,10 +64,12 @@ End     Select
 TEXT = "Press Yes to install Waffle Shell Extension." & vbCrLf & "Press No to uninstall Waffle Shell Extension."
 If MsgBox(TEXT, vbYesNo, "Waffle Shell Extension") = vbYes Then
     WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle\", "Waffle", "REG_SZ"
-    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle\command\", "wscript """ & WAFFLE & """ default ""%1""", "REG_SZ"
+    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle\command\", "wscript """ & WAFFLE & """ open default ""%1""", "REG_SZ"
     WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle_option\", "Waffle Option...", "REG_SZ"
+    WShell.RegWrite "HKEY_CLASSES_ROOT\*\shell\waffle_option\command\", "wscript """ & WAFFLE & """ option ""%1""", "REG_SZ"
 Else
     WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle\command\"
     WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle\"
+    WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle_option\command\"
     WShell.RegDelete "HKEY_CLASSES_ROOT\*\shell\waffle_option\"
 End If
