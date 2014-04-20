@@ -1,7 +1,7 @@
 Waffle the Windows API Filtering Layer
 ======================================
 
-Waffle is an advanced Windows API hooking framework. 
+Waffle is an advanced Windows API hooking framework. Download [latest stable release](https://github.com/MakiseKurisu/WaffleNightly/releases) or [latest nightly build](https://github.com/MakiseKurisu/WaffleNightly/archive/master.zip).
 
 Working on Ring3, Waffle provides two ways to detour a function call: inline/hot-patch hooking, or VEH-based exception detour. Inline hooking is the classical way and provides the best performance, while exception detour works for virtually any function and supports two different exceptions. Also, Waffle is bulit with cross-platform in mind. Not only for x86 programs, Waffle also supports x64 and ARM (on jailbroken Windows RT) programs. The support for IA-64 is incomplete but Waffle is buildable under IA-64 toolchain.
 
@@ -12,7 +12,7 @@ Currently Waffle is in the pre-alpha stage. I don't want to call it even alpha s
 Mojibake
 --------
 
-Mojibake helps you to run ANSI program properly.
+Mojibake helps you to run ANSI programs properly.
 
 ![Mojibake on Windows RT](http://ww1.sinaimg.cn/large/6ddd8e3dgw1efdlk7mtclj211y0lctfd.jpg)
 
@@ -27,13 +27,6 @@ nullstub
 --------
 
 null
-
-Download
-========
-
-[Latest stable release](https://github.com/MakiseKurisu/WaffleNightly/releases)
-
-[Latest nightly build](https://github.com/MakiseKurisu/WaffleNightly/archive/master.zip)
 
 Support
 =======
