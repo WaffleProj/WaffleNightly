@@ -1,1 +1,0 @@
-..\..\Waffle.vbs	mojibake "E:\Doujin\(同人ゲーム) [110903] [NANACAN] 妹調教日記～こんなツンデレが俺の妹なわけない!～\110903_Games_RJ081727\nanacan\imouto.exe"

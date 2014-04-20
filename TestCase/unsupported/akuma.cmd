@@ -1,1 +1,0 @@
-..\..\Waffle.vbs	mojibake "E:\Doujin\srwhjp_GamesX10-35\58╚╦▀B╛AПККж!блРЩ─здлдщд╬епеъе╣е▐е╣е╫еье╝еєе╚бл\RJ071164\RJ039925\akuma.exe"

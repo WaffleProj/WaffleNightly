@@ -1,1 +1,0 @@
-..\..\Waffle.vbs	mojibake "E:\Galgame\Puzzlebox\¥Õ¥¡¥ßÄ§£¡\famima.exe"

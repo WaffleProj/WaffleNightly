@@ -1,2 +1,0 @@
-call	..\Var.cmd
-..\..\Waffle.vbs	mojibake "E:\Doujin\ÏÞ½ç_¤ªÐÖ¤Á¤ã¤ó\genkai2\genkai2.exe"

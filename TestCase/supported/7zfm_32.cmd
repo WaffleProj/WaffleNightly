@@ -1,1 +1,0 @@
-..\..\Waffle.vbs	mojibake "D:\Program Files (x86)\7-Zip\7zFM.exe" "%~dp0932.zip"
