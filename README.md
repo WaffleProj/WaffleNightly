@@ -1,8 +1,8 @@
 # Waffle the Windows API Filtering Layer
 
-Waffle is an advanced Windows API hooking framework.
+### Waffle is an advanced Windows API hooking framework.
 
-Download [latest stable release](https://github.com/MakiseKurisu/WaffleNightly/releases) or [latest nightly build](https://github.com/MakiseKurisu/WaffleNightly/archive/master.zip).
+### Download [latest stable release](https://github.com/MakiseKurisu/WaffleNightly/releases) or [latest nightly build](https://github.com/MakiseKurisu/WaffleNightly/archive/master.zip).
 
 ## Introduction
 
